@@ -2,10 +2,11 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import loginTitle from './login-title.png';
+import AnimatedWrapper from "../AnimatedWrapper";
 
 import './login.css';
 
-class Login extends Component {
+class LoginComponent extends Component {
   state = {
     passwordValue: ""
   }
@@ -50,4 +51,5 @@ class Login extends Component {
   }
 }
 
+const Login = AnimatedWrapper(LoginComponent);
 export default Login;

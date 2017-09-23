@@ -1,5 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800');
 
+@keyframes FadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 100%;
+		transform: translateY(0px);
+	}
+}
+
 .LoginPage {
 	display: flex;
 	width: 100%;
@@ -10,10 +21,11 @@
 }
 
 .LoginPage__Title {
-	font-size: 150px;
 	font-family: 'Alfa Slab One';
 	width: 281px;
 	margin: 0 0 50px 0;
+	animation: FadeIn .5s ease-in-out;
+	animation-fill-mode:forwards;
 	img {
 		width: 100%;
 	}
@@ -32,6 +44,7 @@
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	margin-bottom: 15px;
+	font-size: 20px;
 }
 
 .LoginPage__Password {
