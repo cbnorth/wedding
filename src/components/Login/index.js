@@ -1,27 +1,51 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
+import classNames from 'classnames'
 import loginTitle from './login-title.png';
+
 
 import './login.css';
 
 class Login extends Component {
   state = {
-    passwordValue: ""
+    passwordValue: "",
+    passwordError: null
   }
 
   _passwordChange = (e) => {
     this.setState({
-      passwordValue: e.target.value
+      passwordValue: e.target.value,
+      passwordError: false
     })
   }
 
-  _checkPassword = () => {
-    console.log(this.state.passwordValue);
+  _handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      console.log('do validate');
+    }
+  }
+
+  _checkPassword = (e) => {
+    if (this.state.passwordValue !== "password") {
+      e.preventDefault()
+      this.setState({
+        passwordError: true
+      })
+    } else {
+      this.setState({
+        passwordError: false
+      })
+    }
   }
 
 
   render() {
+    let inputClass = classNames({
+      LoginPage__Password: true,
+      'LoginPage__Password--error': this.state.passwordError
+    });
+
     return (
       <div className="LoginPage">
         <h1 className="LoginPage__Title"><img src={loginTitle} alt="Logo" /></h1>
@@ -36,11 +60,24 @@ class Login extends Component {
             <span className="r">r</span>
             <span className="d">d</span>
           </label>
-          <input id="password" type="password" className="LoginPage__Password" onChange={(e) =>this._passwordChange(e)} value={this.state.passwordValue} />
+          <input
+            id="password"
+            type="password"
+            className={inputClass}
+            onChange={(e) =>this._passwordChange(e)}
+            onKeyPress={this._handleKeyPress}
+            value={this.state.passwordValue} />
           {/* ToDo: enter for submit */}
-          <button onClick={() => this._checkPassword()}>Okay</button>
+          {this.state.passwordValue.length > 0 &&
+            <button >
+              <Link to='/save_the_date' onClick={this._checkPassword}>Home</Link>
+            </button>
+          }
+
+          {this.state.passwordError &&
+            <p>Incorrect Password</p>
+          }
         </div>
-        <Link to='/save_the_date'>Home</Link>
       </div>
     );
   }
