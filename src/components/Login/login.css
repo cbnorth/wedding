@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800");
+.LoginPage {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+
+.LoginPage__Title {
+  font-size: 150px;
+  font-family: 'Alfa Slab One';
+  width: 281px;
+  margin: 0 0 50px 0; }
+  .LoginPage__Title img {
+    width: 100%; }
+
+.LoginPage_LoginForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+
+.LoginPage_PasswordLabel {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 15px; }
+
+.LoginPage__Password {
+  border: 1px solid #cfc7c4;
+  width: 300px;
+  padding: 10px 5px;
+  border-radius: 5px;
+  font-size: 17px; }
+
+.p {
+  color: #e6ab2c; }
+
+.a {
+  color: #f75947; }
+
+.s {
+  color: #f77fb6; }
+
+.s2 {
+  color: #4bbbec; }
+
+.w {
+  color: #00aeb5; }
+
+.o {
+  color: #eb165e; }
+
+.r {
+  color: #f17569; }
+
+.d {
+  color: #accc2d; }
