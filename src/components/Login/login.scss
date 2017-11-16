@@ -11,6 +11,17 @@
 	}
 }
 
+@keyframes smallFadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(5px);
+	}
+	to {
+		opacity: 100%;
+		transform: translateY(0px);
+	}
+}
+
 @keyframes shake {
   10%, 90% {
     transform: translate3d(-1px, 0, 0);
@@ -37,10 +48,31 @@
 
 .LoginPage__Title {
 	font-family: 'Alfa Slab One';
-	width: 281px;
+	width: auto;
 	margin: 0 0 50px 0;
 	animation: FadeIn .5s ease-in-out;
 	animation-fill-mode:forwards;
+	font-size: 150px;
+
+	span:nth-child(2) {
+		color: #eae5dc;
+		opacity: .8;
+	}
+
+	span:first-child, span:last-child {
+		color: #eae5dc;
+	}
+
+	span:first-child {
+		position: relative;
+		left: 20px;
+	}
+
+	span:last-child {
+		position: relative;
+		right: 20px;
+	}
+
 	img {
 		width: 100%;
 	}
@@ -51,6 +83,7 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	position: relative;
 }
 
 .LoginPage_PasswordLabel {
@@ -64,10 +97,11 @@
 
 .LoginPage__Password {
 	border: 1px solid #cfc7c4;
-	width: 300px;
+	width: 400px;
 	padding: 10px 5px;
 	border-radius: 5px;
 	font-size: 17px;
+	transition: all .15s ease-in-out;
 
 	&--error {
 		animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
@@ -75,6 +109,28 @@
 	  backface-visibility: hidden;
 	  perspective: 1000px;
 	}
+
+	&--typedIn {
+		width: 325px;
+		margin-left: -75px;
+	}
+}
+
+.Btn {
+	height: 42px;
+	border: none;
+	padding: 0 20px;
+	margin: 0;
+	width: 67px;
+	margin-left: 8px;
+}
+
+.ErrorMessage {
+	position: absolute;
+	bottom: -55px;
+	left: 0;
+	animation: smallFadeIn .25s ease-in-out;
+	animation-fill-mode:forwards;
 }
 
 

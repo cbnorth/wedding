@@ -10,7 +10,8 @@ import './login.css';
 class Login extends Component {
   state = {
     passwordValue: "",
-    passwordError: null
+    passwordError: null,
+    passwordErrorMessage: null
   }
 
   _passwordChange = (e) => {
@@ -43,12 +44,14 @@ class Login extends Component {
   render() {
     let inputClass = classNames({
       LoginPage__Password: true,
-      'LoginPage__Password--error': this.state.passwordError
+      'LoginPage__Password--error': this.state.passwordError,
+      'LoginPage__Password--typedIn': this.state.passwordValue
     });
 
     return (
       <div className="LoginPage">
-        <h1 className="LoginPage__Title"><img src={loginTitle} alt="Logo" /></h1>
+        {/* <img src={loginTitle} alt="Logo" /> */}
+        <h1 className="LoginPage__Title"><span>E</span><span>&</span><span>C</span></h1>
         <div className="LoginPage_LoginForm">
           <label className="LoginPage_PasswordLabel" htmlFor="password">
             <span className="p">P</span>
@@ -60,22 +63,23 @@ class Login extends Component {
             <span className="r">r</span>
             <span className="d">d</span>
           </label>
-          <input
-            id="password"
-            type="password"
-            className={inputClass}
-            onChange={(e) =>this._passwordChange(e)}
-            onKeyPress={this._handleKeyPress}
-            value={this.state.passwordValue} />
-          {/* ToDo: enter for submit */}
-          {this.state.passwordValue.length > 0 &&
-            <button >
-              <Link to='/save_the_date' onClick={this._checkPassword}>Home</Link>
-            </button>
-          }
-
+          <div>
+            <input
+              id="password"
+              type="password"
+              className={inputClass}
+              onChange={(e) =>this._passwordChange(e)}
+              onKeyPress={this._handleKeyPress}
+              value={this.state.passwordValue} />
+            {/* ToDo: enter for submit */}
+            {this.state.passwordValue.length > 0 &&
+              <button className="Btn">
+                <Link to='/save_the_date' onClick={this._checkPassword}>Home</Link>
+              </button>
+            }
+          </div>
           {this.state.passwordError &&
-            <p>Incorrect Password</p>
+            <p className="ErrorMessage">Incorrect Password!</p>
           }
         </div>
       </div>

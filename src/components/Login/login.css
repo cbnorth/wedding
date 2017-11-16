@@ -7,6 +7,14 @@
     opacity: 100%;
     transform: translateY(0px); } }
 
+@keyframes smallFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px); }
+  to {
+    opacity: 100%;
+    transform: translateY(0px); } }
+
 @keyframes shake {
   10%, 90% {
     transform: translate3d(-1px, 0, 0); }
@@ -27,10 +35,22 @@
 
 .LoginPage__Title {
   font-family: 'Alfa Slab One';
-  width: 281px;
+  width: auto;
   margin: 0 0 50px 0;
   animation: FadeIn .5s ease-in-out;
-  animation-fill-mode: forwards; }
+  animation-fill-mode: forwards;
+  font-size: 150px; }
+  .LoginPage__Title span:nth-child(2) {
+    color: #eae5dc;
+    opacity: .8; }
+  .LoginPage__Title span:first-child, .LoginPage__Title span:last-child {
+    color: #eae5dc; }
+  .LoginPage__Title span:first-child {
+    position: relative;
+    left: 20px; }
+  .LoginPage__Title span:last-child {
+    position: relative;
+    right: 20px; }
   .LoginPage__Title img {
     width: 100%; }
 
@@ -38,7 +58,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  position: relative; }
 
 .LoginPage_PasswordLabel {
   font-family: 'Raleway', sans-serif;
@@ -50,15 +71,34 @@
 
 .LoginPage__Password {
   border: 1px solid #cfc7c4;
-  width: 300px;
+  width: 400px;
   padding: 10px 5px;
   border-radius: 5px;
-  font-size: 17px; }
+  font-size: 17px;
+  transition: all .15s ease-in-out; }
   .LoginPage__Password--error {
     animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
     transform: translate3d(0, 0, 0);
     backface-visibility: hidden;
     perspective: 1000px; }
+  .LoginPage__Password--typedIn {
+    width: 325px;
+    margin-left: -75px; }
+
+.Btn {
+  height: 42px;
+  border: none;
+  padding: 0 20px;
+  margin: 0;
+  width: 67px;
+  margin-left: 8px; }
+
+.ErrorMessage {
+  position: absolute;
+  bottom: -55px;
+  left: 0;
+  animation: smallFadeIn .25s ease-in-out;
+  animation-fill-mode: forwards; }
 
 .p {
   color: #e6ab2c; }

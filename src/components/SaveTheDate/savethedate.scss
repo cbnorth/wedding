@@ -1,0 +1,59 @@
+$brown: #f4efe7;
+$sandstone: #726d5d;
+$mainBackground: $brown;
+$copyColor: $sandstone;
+
+@import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One');
+
+.LockUp {
+	background-color: $mainBackground;
+	background-image:url(lockup.png);
+	background-size: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100vh;
+	position: relative;
+
+	h1 {
+		font-family: 'Raleway', sans-serif;
+		font-weight: 300;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		margin-bottom: 15px;
+		font-size:11vw;
+		color: $copyColor;
+		position: absolute;
+		top: 60px;
+	}
+
+	p {
+		position: absolute;
+		top: 500px;
+		font-family: 'Raleway', sans-serif;
+		font-weight: 300;
+		color: $copyColor;
+		width: 450px;
+		text-align: center;
+	}
+}
+
+.Container {
+	background-color: $mainBackground;
+	width: 100%;
+	padding: 0 10%;
+
+	&--light {
+		background-color: #fff;
+	}
+}
+
+.MapLink {
+	width: 350px;
+	background-image: url(/static/media/map.eedfc9bf.jpg);
+	background-size: cover;
+	padding-bottom: 23%;
+	display: block;
+}

@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css?family=Alfa+Slab+One");
+.LockUp {
+  background-color: #f4efe7;
+  background-image: url(lockup.png);
+  background-size: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  position: relative; }
+  .LockUp h1 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    font-size: 11vw;
+    color: #726d5d;
+    position: absolute;
+    top: 60px; }
+  .LockUp p {
+    position: absolute;
+    top: 500px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    color: #726d5d;
+    width: 450px;
+    text-align: center; }
+
+.Container {
+  background-color: #f4efe7;
+  width: 100%;
+  padding: 0 10%; }
+  .Container--light {
+    background-color: #fff; }
+
+.MapLink {
+  width: 350px;
+  background-image: url(/static/media/map.eedfc9bf.jpg);
+  background-size: cover;
+  padding-bottom: 23%;
+  display: block; }
