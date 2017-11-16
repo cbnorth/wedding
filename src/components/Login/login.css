@@ -71,7 +71,7 @@
 
 .LoginPage__Password {
   border: 1px solid #cfc7c4;
-  width: 400px;
+  width: 300px;
   padding: 10px 5px;
   border-radius: 5px;
   font-size: 17px;
@@ -81,17 +81,28 @@
     transform: translate3d(0, 0, 0);
     backface-visibility: hidden;
     perspective: 1000px; }
-  .LoginPage__Password--typedIn {
-    width: 325px;
-    margin-left: -75px; }
+  @media (min-width: 991px) {
+    .LoginPage__Password--typedIn {
+      width: 325px;
+      margin-left: -75px; } }
+
+.LoginPage__ButtonContainer {
+  display: block;
+  text-align: center; }
 
 .Btn {
-  height: 42px;
+  display: inline-block;
+  width: 100%;
+  max-width: 150px;
   border: none;
-  padding: 0 20px;
-  margin: 0;
-  width: 67px;
-  margin-left: 8px; }
+  padding: 10px 20px;
+  margin: 20px 0 0 0;
+  background-color: red;
+  color: #fff; }
+  .Btn a {
+    color: inherit;
+    text-decoration: none;
+    font-size: 20px; }
 
 .ErrorMessage {
   position: absolute;

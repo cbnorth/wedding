@@ -1,0 +1,28 @@
+@import 'variables';
+
+$bodyCopyColor: $midnight-darker;
+
+$serif: $aleo, serif;
+$sans-serif: $gtpresurra, sans-serif;
+
+$primary-font: $serif;
+$secondary-font: $sans-serif;
+
+
+%tertiaryHeader {
+	font-family: $secondary-font;
+	font-weight: 700;
+	font-size: 17.4px;
+	line-height: 1.2;
+	text-transform: uppercase;
+	color: $bodyCopyColor;
+}
+
+%tertiaryHeader--light {
+	font-family: $secondary-font;
+	font-weight: 400;
+	font-size: 17.4px;
+	line-height: 1.2;
+	text-transform: uppercase;
+	color: $bodyCopyColor;
+}

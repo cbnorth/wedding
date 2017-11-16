@@ -73,9 +73,11 @@ class Login extends Component {
               value={this.state.passwordValue} />
             {/* ToDo: enter for submit */}
             {this.state.passwordValue.length > 0 &&
-              <button className="Btn">
-                <Link to='/save_the_date' onClick={this._checkPassword}>Home</Link>
-              </button>
+              <div className="LoginPage__ButtonContainer">
+                <button className="Btn">
+                  <Link to='/save_the_date' onClick={this._checkPassword}>Login</Link>
+                </button>
+              </div>
             }
           </div>
           {this.state.passwordError &&
