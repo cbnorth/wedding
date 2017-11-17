@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800');
 @import '../../settings/mixins';
 
-$buttonColor: #f75947;
+$siteCoral: #f75947;
+
+$buttonColor: $siteCoral;
+$errorColor: $siteCoral;
 
 @keyframes FadeIn {
 	from {
@@ -118,12 +121,14 @@ $buttonColor: #f75947;
 	border-radius: 5px;
 	font-size: 17px;
 	transition: all .15s ease-in-out;
+	outline: none;
 
 	&--error {
 		animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
 	  transform: translate3d(0, 0, 0);
 	  backface-visibility: hidden;
 	  perspective: 1000px;
+		border-color: $errorColor;
 	}
 
 	@include breakpoint(med) {
@@ -132,7 +137,17 @@ $buttonColor: #f75947;
 			margin-left: -75px;
 		}
 	}
+}
 
+.ShowPassword {
+	display: block;
+	text-align: right;
+	margin: 8px 5px 0 0;
+	color: #ccc;
+	font-size: 12px;
+	position: absolute;
+	top: 41px;
+	right: 5px;
 }
 
 .LoginPage__ButtonContainer {
@@ -157,9 +172,7 @@ $buttonColor: #f75947;
 }
 
 .ErrorMessage {
-	position: absolute;
-	bottom: -55px;
-	left: 0;
+	margin: 5px 0 0 5px;
 	animation: smallFadeIn .25s ease-in-out;
 	animation-fill-mode:forwards;
 }

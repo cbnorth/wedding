@@ -11,7 +11,8 @@ class Login extends Component {
   state = {
     passwordValue: "",
     passwordError: null,
-    passwordErrorMessage: null
+    passwordErrorMessage: null,
+    showPassword: false
   }
 
   _passwordChange = (e) => {
@@ -25,6 +26,12 @@ class Login extends Component {
     if (e.key === 'Enter') {
       this._checkPassword(e);
     }
+  }
+
+  _toggleShowPassword = () => {
+    this.setState({
+      showPassword: !this.state.showPassword
+    })
   }
 
   _checkPassword = (e) => {
@@ -72,11 +79,16 @@ class Login extends Component {
           <div>
             <input
               id="password"
-              type="password"
+              type={this.state.showPassword ? "text" : "password"}
               className={inputClass}
               onChange={(e) =>this._passwordChange(e)}
               onKeyPress={this._handleKeyPress}
-              value={this.state.passwordValue} />
+              value={this.state.passwordValue}
+            />
+              {this.state.passwordError &&
+                <p className="ErrorMessage">Nope :(</p>
+              }
+              <span className="ShowPassword" onClick={this._toggleShowPassword}>{this.state.showPassword ? "hide" : "show"}</span>
             {this.state.passwordValue.length > 0 &&
               <div className="LoginPage__ButtonContainer">
                 <button className="Btn">
@@ -85,9 +97,6 @@ class Login extends Component {
               </div>
             }
           </div>
-          {this.state.passwordError &&
-            <p className="ErrorMessage">Incorrect Password!</p>
-          }
         </div>
       </div>
     );

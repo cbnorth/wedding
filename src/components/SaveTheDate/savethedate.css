@@ -1,12 +1,26 @@
 @import url("https://fonts.googleapis.com/css?family=Alfa+Slab+One");
+* {
+  margin: 0;
+  padding: 0; }
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit; }
+
+html {
+  box-sizing: border-box;
+  text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent; }
+
+em {
+  font-weight: bold; }
+
 .LockUp {
-  background-color: #f4efe7;
-  background-image: url(lockup.png);
-  background-size: 100%;
+  background-color: #EBE6E0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   width: 100%;
   height: 100vh;
   position: relative; }
@@ -15,19 +29,22 @@
     font-weight: 300;
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-bottom: 15px;
+    margin: 20px 0 50px 0;
     font-size: 11vw;
-    color: #726d5d;
-    position: absolute;
-    top: 60px; }
+    color: #726d5d; }
   .LockUp p {
-    position: absolute;
-    top: 500px;
     font-family: 'Raleway', sans-serif;
     font-weight: 300;
+    font-size: 15px;
     color: #726d5d;
-    width: 450px;
-    text-align: center; }
+    text-align: center;
+    padding: 0 20px; }
+  @media (min-width: 991px) {
+    .LockUp {
+      background-color: #f4efe7;
+      background-image: url(lockup.png);
+      background-size: cover;
+      justify-content: center; } }
 
 .Container {
   background-color: #f4efe7;

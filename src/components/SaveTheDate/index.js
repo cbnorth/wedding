@@ -1,19 +1,51 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import mapImage from './map.jpg';
+import classNames from 'classnames'
 
 import './savethedate.css';
 import './savethedate.css';
 
 
-const LockUp = () => (
-  <div className="LockUp">
-    <h1>09.29.18</h1>
-    <p>We're getting married and we want you to come to our wedding! Please come and help us laugh, dance, eat, drink and celebrate our love. The date is September 29, 2018, so please save the date and send us your email address below so you can get the proper invite when the time comes. </p>
-  </div>
-)
+class LockUp extends Component {
+  state = {
+    emailValue: ''
+  }
+
+  _emailChange = (e) => {
+    this.setState({
+      emailValue: e.target.value
+    })
+  }
+
+  _handleKeyPress = (e) => {
+    console.log('keypress')
+    if (e.key === 'Enter') {
+      this._checkPassword(e);
+    }
+  }
+
+  render() {
+    return(
+      <div className="LockUp">
+        <h1>09.29.18</h1>
+        <p>We're getting married and we want you to come to our wedding! The date is <em>September 29, 2018</em>, so please save the date and send us your email address below so you can get the proper invite when the time comes.</p>
+        <input
+          id="email"
+          className={"foo"}
+          onChange={(e) =>this._emailChange(e)}
+          onKeyPress={this._handleKeyPress}
+          value={this.state.emailValue}
+        />
+      </div>
+    )
+  }
+}
 
 class SaveTheDate extends Component {
+  state = {
+    emailValue: ""
+  }
 
   render() {
     return (
