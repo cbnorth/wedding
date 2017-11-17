@@ -31,28 +31,39 @@
   height: 100vh;
   flex-direction: column;
   align-items: center;
-  justify-content: center; }
+  padding-top: 85px; }
+  @media (min-width: 991px) {
+    .LoginPage {
+      justify-content: center;
+      padding-top: 0; } }
 
 .LoginPage__Title {
   font-family: 'Alfa Slab One';
   width: auto;
-  margin: 0 0 50px 0;
+  margin: 0 0 35px 0;
   animation: FadeIn .5s ease-in-out;
   animation-fill-mode: forwards;
-  font-size: 150px; }
+  font-size: 115px;
+  padding-left: 17px; }
   .LoginPage__Title span:nth-child(2) {
     color: #eae5dc;
-    opacity: .8; }
+    opacity: .5; }
   .LoginPage__Title span:first-child, .LoginPage__Title span:last-child {
     color: #eae5dc; }
   .LoginPage__Title span:first-child {
     position: relative;
-    left: 20px; }
+    left: 20px;
+    opacity: .7; }
   .LoginPage__Title span:last-child {
     position: relative;
-    right: 20px; }
+    right: 36px;
+    opacity: .7; }
   .LoginPage__Title img {
     width: 100%; }
+  @media (min-width: 991px) {
+    .LoginPage__Title {
+      font-size: 150px;
+      margin: 0 0 50px 0; } }
 
 .LoginPage_LoginForm {
   display: flex;
@@ -97,7 +108,7 @@
   border: none;
   padding: 10px 20px;
   margin: 20px 0 0 0;
-  background-color: red;
+  background-color: #f75947;
   color: #fff; }
   .Btn a {
     color: inherit;

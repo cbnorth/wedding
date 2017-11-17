@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import loginTitle from './login-title.png';
@@ -23,11 +23,12 @@ class Login extends Component {
 
   _handleKeyPress = (e) => {
     if (e.key === 'Enter') {
-      console.log('do validate');
+      this._checkPassword(e);
     }
   }
 
   _checkPassword = (e) => {
+    console.log(this.state.passwordValue);
     if (this.state.passwordValue !== "password") {
       e.preventDefault()
       this.setState({
@@ -35,7 +36,8 @@ class Login extends Component {
       })
     } else {
       this.setState({
-        passwordError: false
+        passwordError: false,
+        redirect: true
       })
     }
   }
@@ -47,6 +49,10 @@ class Login extends Component {
       'LoginPage__Password--error': this.state.passwordError,
       'LoginPage__Password--typedIn': this.state.passwordValue
     });
+
+    if (this.state.redirect) {
+      return <Redirect push to="/save_the_date" />;
+    }
 
     return (
       <div className="LoginPage">
@@ -71,7 +77,6 @@ class Login extends Component {
               onChange={(e) =>this._passwordChange(e)}
               onKeyPress={this._handleKeyPress}
               value={this.state.passwordValue} />
-            {/* ToDo: enter for submit */}
             {this.state.passwordValue.length > 0 &&
               <div className="LoginPage__ButtonContainer">
                 <button className="Btn">

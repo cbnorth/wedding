@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800');
 @import '../../settings/mixins';
 
-$buttonColor: red;
+$buttonColor: #f75947;
 
 @keyframes FadeIn {
 	from {
@@ -46,20 +46,26 @@ $buttonColor: red;
 	height: 100vh;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
+	padding-top: 85px;
+
+	@include breakpoint(med) {
+			justify-content: center;
+			padding-top: 0;
+	}
 }
 
 .LoginPage__Title {
 	font-family: 'Alfa Slab One';
 	width: auto;
-	margin: 0 0 50px 0;
+	margin: 0 0 35px 0;
 	animation: FadeIn .5s ease-in-out;
 	animation-fill-mode:forwards;
-	font-size: 150px;
+	font-size: 115px;
+	padding-left: 17px;
 
 	span:nth-child(2) {
 		color: #eae5dc;
-		opacity: .8;
+		opacity: .5;
 	}
 
 	span:first-child, span:last-child {
@@ -69,15 +75,22 @@ $buttonColor: red;
 	span:first-child {
 		position: relative;
 		left: 20px;
+		opacity: .7;
 	}
 
 	span:last-child {
 		position: relative;
-		right: 20px;
+		right: 36px;
+		opacity: .7;
 	}
 
 	img {
 		width: 100%;
+	}
+
+	@include breakpoint(med) {
+		font-size: 150px;
+		margin: 0 0 50px 0;
 	}
 }
 
