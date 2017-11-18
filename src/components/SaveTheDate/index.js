@@ -1,72 +1,109 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import mapImage from './map.jpg';
+import mapImage from './map.jpg'
 import classNames from 'classnames'
 
-import './savethedate.css';
-import './savethedate.css';
+import './savethedate.css'
+import './savethedate.css'
 
-
-class LockUp extends Component {
-  state = {
-    emailValue: ''
-  }
-
-  _emailChange = (e) => {
-    this.setState({
-      emailValue: e.target.value
-    })
-  }
-
-  _handleKeyPress = (e) => {
-    console.log('keypress')
-    if (e.key === 'Enter') {
-      this._checkPassword(e);
-    }
-  }
-
-  render() {
-    return(
-      <div className="LockUp">
-        <h1>09.29.18</h1>
-        <p>We're getting married and we want you to come to our wedding! The date is <em>September 29, 2018</em>, so please save the date and send us your email address below so you can get the proper invite when the time comes.</p>
-        <input
-          id="email"
-          className={"foo"}
-          onChange={(e) =>this._emailChange(e)}
-          onKeyPress={this._handleKeyPress}
-          value={this.state.emailValue}
-        />
-      </div>
-    )
-  }
-}
 
 class SaveTheDate extends Component {
   state = {
-    emailValue: ""
-  }
+		emailValue: '',
+    formSubmitted: false
+	}
 
-  render() {
-    return (
-      <div className="SaveTheDate">
-        <LockUp />
-        <section className="Container Container--light">
-          <a href="https://goo.gl/maps/WEnG2koKFyE2" className="MapLink" target="blank"></a>
-          <h1>Location</h1>
-          <h2>The Field’s at Willie Green’s
-            <span>19501 Tualco Road
-                  Monroe, WA 98272</span>
-          </h2>
-          <p>The venue is outdoors but covered, please dress accordingly - the party will continue rain or shine! Free parking is provided.</p>
-        </section>
-      </div>
-    );
-  }
+	_emailChange = e => {
+		this.setState({
+			emailValue: e.target.value
+		})
+	}
 
-  static propTypes = {
+	_handleFormSubmit = e => {
+		//e.preventDefault()
+    this.setState({
+			formSubmitted: true
+		})
+	}
 
-  }
+	render() {
+		return (
+			<div className="LockUp">
+				<h1>
+          <span className="word save">
+            <span className="s">S</span>
+            <span className="a">a</span>
+            <span className="v">v</span>
+            <span className="e">e</span>
+          </span>
+          <span className="word the">
+            <span className="t">t</span>
+            <span className="h">h</span>
+            <span className="e">e</span>
+          </span>
+          <span className="word date">
+            <span className="d">d</span>
+            <span className="a">a</span>
+            <span className="t">t</span>
+            <span className="e">e</span>
+            <span className="exp">!</span>
+          </span>
+        </h1>
+        <h2>
+          Sept. 29, 2018
+        </h2>
+				<p>
+					We're getting married! <br /> Come over and celebrate with us at <a href="" target="_blank">The Fields at Willie’s Greens</a> in Monroe, Washington on September 29, 2018. Please provide your email address to receive your formal invitation.
+
+
+				</p>
+        <div>
+          <iframe id="iframe_txlbrchf" name="iframe_txlbrchf" style={{display: 'none'}}/>
+          <form id="ss-form"
+            action="https://docs.google.com/forms/d/1qXZsxrL_2r3k8ZxMGKnJoD-dGNE0zih0lEl9X_22Ycw/formResponse"
+            method="POST"
+            target="iframe_txlbrchf"
+            onSubmit={this._handleFormSubmit}
+            className={this.state.formSubmitted && "submitted"}>
+              <div className={"ss-form-question"}>
+                <input
+                  id="entry_1069655472"
+                  type="text"
+                  name="entry.1069655472"
+                  dir="auto"
+                  aria-label="Name  "
+                  aria-required="true"
+                  required
+                  placeholder="Name"
+                  className="ss-q-short" />
+                <input
+                  id="entry_1879453804"
+                  type="email"
+                  name="entry.1879453804"
+                  placeholder="Email"
+                  aria-required="true"
+                  dir="auto"
+                  required
+                  aria-label="Email (for verification and updates)  Must be a valid email address"
+                  title="Must be a valid email address"
+                  className="ss-q-short"
+                  ref="emailInput"
+                />
+                <input type="hidden" name="draftResponse" defaultValue="[,,&quot;1258204824982472417&quot;]    " />
+                <input type="hidden" name="pageHistory" defaultValue={0} />
+                <input type="hidden" name="fbzx" defaultValue={1258204824982472417} />
+                <div className="submit_container">
+                  <input id="ss-submit" type="submit" name="submit" defaultValue="Count me in" className="jfk-button jfk-button-action" />
+                </div>
+              </div>
+              <p className="success_message">Thanks! Looking forward to seeing you.</p>
+          </form>
+        </div>
+			</div>
+		)
+	}
+
+	static propTypes = {}
 }
 
-export default SaveTheDate;
+export default SaveTheDate

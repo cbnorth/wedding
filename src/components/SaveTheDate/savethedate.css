@@ -17,7 +17,7 @@ em {
   font-weight: bold; }
 
 .LockUp {
-  background-color: #EBE6E0;
+  background-color: #edeae4;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,12 +26,14 @@ em {
   position: relative; }
   .LockUp h1 {
     font-family: 'Raleway', sans-serif;
-    font-weight: 300;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    font-weight: 700;
     margin: 20px 0 50px 0;
-    font-size: 11vw;
+    font-size: 7vw;
     color: #726d5d; }
+  .LockUp h2 {
+    font-family: 'Alfa Slab One';
+    color: #726d5d;
+    font-size: 12vw; }
   .LockUp p {
     font-family: 'Raleway', sans-serif;
     font-weight: 300;
@@ -39,12 +41,34 @@ em {
     color: #726d5d;
     text-align: center;
     padding: 0 20px; }
-  @media (min-width: 991px) {
-    .LockUp {
-      background-color: #f4efe7;
-      background-image: url(lockup.png);
-      background-size: cover;
-      justify-content: center; } }
+  .LockUp .word {
+    margin-right: 2vw; }
+    .LockUp .word:last-child {
+      margin-right: 0px; }
+  .LockUp .save .s {
+    color: #4bbbec; }
+  .LockUp .save .a {
+    color: #14b07f; }
+  .LockUp .save .v {
+    color: #a6c62d; }
+  .LockUp .save .e {
+    color: #f17569; }
+  .LockUp .the .t {
+    color: #deab31; }
+  .LockUp .the .h {
+    color: #f45a48; }
+  .LockUp .the .e {
+    color: #eb165e; }
+  .LockUp .date .d {
+    color: #00aeb5; }
+  .LockUp .date .a {
+    color: #4bbbec; }
+  .LockUp .date .t {
+    color: #f77fb6; }
+  .LockUp .date .e {
+    color: #f45a48; }
+  .LockUp .date .exp {
+    color: #deab31; }
 
 .Container {
   background-color: #f4efe7;
@@ -59,3 +83,105 @@ em {
   background-size: cover;
   padding-bottom: 23%;
   display: block; }
+
+form {
+  width: 100%;
+  margin-top: 30px; }
+  @media (min-width: 991px) {
+    form .first_name, form .last_name {
+      width: 48%; }
+    form .first_name {
+      float: left;
+      margin-right: 2%; }
+    form .last_name {
+      float: right;
+      margin-left: 2%; } }
+  form input:not([type='submit']), form textarea, form select {
+    border: 1px solid #DADADA;
+    color: #888;
+    margin-bottom: 25px;
+    margin-right: 6px;
+    margin-top: 2px;
+    outline: 0 none;
+    padding: 10px 5px;
+    font-size: 12px;
+    line-height: 22px;
+    box-shadow: inset 0px 1px 4px #ECECEC;
+    -moz-box-shadow: inset 0px 1px 4px #ECECEC;
+    -webkit-box-shadow: inset 0px 1px 4px #ECECEC;
+    font-size: 16px;
+    font-size: 1.6rem;
+    letter-spacing: 1px; }
+  form input, form textarea, form select {
+    display: block;
+    width: 100%; }
+  form label {
+    display: block;
+    margin: 0px; }
+  form label > span {
+    float: left;
+    width: 20%;
+    text-align: right;
+    padding-right: 10px;
+    margin-top: 10px;
+    color: #888; }
+  form textarea {
+    padding: 10px;
+    height: 200px;
+    line-height: 24px; }
+  form textarea.active {
+    margin-bottom: 0; }
+  form input[type="submit"] {
+    font-size: 16px;
+    font-size: 1.6rem;
+    background-color: #726d5d;
+    color: #fff;
+    display: inline-block;
+    width: 100%;
+    padding: 14px 36px;
+    text-align: center;
+    text-decoration: none;
+    margin: 10px 0;
+    cursor: pointer;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    -webkit-transition: background-color 0.15s ease;
+    transition: background-color 0.15s ease;
+    border: none;
+    position: relative;
+    z-index: 2; }
+    form input[type="submit"]:hover {
+      background-color: yellow; }
+    @media (min-width: 991px) {
+      form input[type="submit"] {
+        display: inline-block;
+        width: auto; } }
+
+.required-message, .error-message {
+  color: #c43b1d;
+  display: none;
+  font-size: 13px; }
+
+.required ~ .required-message, .error ~ .error-message {
+  display: block; }
+
+.success_message {
+  visibility: hidden;
+  opacity: 0;
+  -ms-transform: translateY(50px);
+  -webkit-transform: translateY(50px);
+  transform: translateY(50px);
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  height: 0; }
+
+.submitted .ss-form-question, .submitted #ss-submit {
+  display: none; }
+
+.submitted .success_message {
+  opacity: 1;
+  visibility: visible;
+  -ms-transform: translateY(20px);
+  -webkit-transform: translateY(20px);
+  transform: translateY(20px);
+  height: auto; }

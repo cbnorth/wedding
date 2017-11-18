@@ -53,8 +53,7 @@ class Login extends Component {
   render() {
     let inputClass = classNames({
       LoginPage__Password: true,
-      'LoginPage__Password--error': this.state.passwordError,
-      'LoginPage__Password--typedIn': this.state.passwordValue
+      'LoginPage__Password--error': this.state.passwordError
     });
 
     if (this.state.redirect) {
@@ -86,13 +85,13 @@ class Login extends Component {
               value={this.state.passwordValue}
             />
               {this.state.passwordError &&
-                <p className="ErrorMessage">Nope :(</p>
+                <p className="ErrorMessage">Nope</p>
               }
               <span className="ShowPassword" onClick={this._toggleShowPassword}>{this.state.showPassword ? "hide" : "show"}</span>
             {this.state.passwordValue.length > 0 &&
               <div className="LoginPage__ButtonContainer">
                 <button className="Btn">
-                  <Link to='/save_the_date' onClick={this._checkPassword}>Login</Link>
+                  <Link to='/save_the_date' onClick={this._checkPassword}>Enter</Link>
                 </button>
               </div>
             }

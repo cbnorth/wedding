@@ -36,6 +36,22 @@
     .LoginPage {
       justify-content: center;
       padding-top: 0; } }
+  .LoginPage .p {
+    color: #e6ab2c; }
+  .LoginPage .a {
+    color: #f75947; }
+  .LoginPage .s {
+    color: #f77fb6; }
+  .LoginPage .s2 {
+    color: #4bbbec; }
+  .LoginPage .w {
+    color: #00aeb5; }
+  .LoginPage .o {
+    color: #eb165e; }
+  .LoginPage .r {
+    color: #f17569; }
+  .LoginPage .d {
+    color: #accc2d; }
 
 .LoginPage__Title {
   font-family: 'Alfa Slab One';
@@ -94,10 +110,6 @@
     backface-visibility: hidden;
     perspective: 1000px;
     border-color: #f75947; }
-  @media (min-width: 991px) {
-    .LoginPage__Password--typedIn {
-      width: 325px;
-      margin-left: -75px; } }
 
 .ShowPassword {
   display: block;
@@ -118,40 +130,27 @@
   width: 100%;
   max-width: 150px;
   border: none;
-  padding: 10px 20px;
-  margin: 20px 0 0 0;
-  background-color: #f75947;
-  color: #fff; }
+  padding: 8px 20px;
+  margin: 35px 0 0 0;
+  background-color: #726d5d;
+  color: #fff;
+  cursor: pointer;
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out; }
   .Btn a {
     color: inherit;
     text-decoration: none;
-    font-size: 20px; }
+    font-size: 20px;
+    text-transform: uppercase; }
+  .Btn:hover {
+    background-color: #f75947; }
 
 .ErrorMessage {
+  position: absolute;
   margin: 5px 0 0 5px;
   animation: smallFadeIn .25s ease-in-out;
-  animation-fill-mode: forwards; }
-
-.p {
-  color: #e6ab2c; }
-
-.a {
+  animation-fill-mode: forwards;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  font-size: 15px;
   color: #f75947; }
-
-.s {
-  color: #f77fb6; }
-
-.s2 {
-  color: #4bbbec; }
-
-.w {
-  color: #00aeb5; }
-
-.o {
-  color: #eb165e; }
-
-.r {
-  color: #f17569; }
-
-.d {
-  color: #accc2d; }

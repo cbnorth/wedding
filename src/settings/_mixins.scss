@@ -49,3 +49,33 @@
 		}
 	}
 }
+
+
+@function calculateRem($size) {
+    $remSize: $size / 10px;
+    @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+    font-size: $size;
+    font-size: calculateRem($size);
+}
+
+@mixin transform ($transforms) {
+    -ms-transform: $transforms;
+    -webkit-transform: $transforms;
+    transform: $transforms;
+}
+
+@mixin filter ($filters) {
+    -webkit-filter: $filters;
+    -moz-filter: $filters;
+    -o-filter: $filters;
+    -ms-filter: $filters;
+    filter: $filters;
+}
+
+@mixin transition ($value...) {
+    -webkit-transition: $value;
+    transition: $value;
+}
