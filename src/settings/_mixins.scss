@@ -1,28 +1,7 @@
-@mixin media($port) {
-  $break-point-sm: 768px;
-  $break-point-md: 991px;
-  $break-point-lg: 1440px;
-  $break-point-xl: 1440px;
-
-  @if $port == sm {
-    @media only screen and (min-width: $break-point-sm) { @content; }
-  }
-  @else if $port == md {
-    @media only screen and (min-width: $break-point-md) { @content; }
-  }
-  @else if $port == lg {
-    @media only screen and (min-width: $break-point-lg) { @content; }
-  }
-  @else if $port == xl {
-    @media only screen and (min-width: $break-point-xl) { @content; }
-  }
-}
-
-
 @mixin breakpoint($break) {
   $xs: 375px;
   $sm: 768px;
-  $med: 991px; //incorrect should be 1024;
+  $med: 1024px;
   $lg: 1440px;
 
 	@if $break == sm {

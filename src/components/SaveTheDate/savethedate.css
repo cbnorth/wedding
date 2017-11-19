@@ -18,33 +18,54 @@ em {
 
 .LockUp {
   background-color: #edeae4;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   width: 100%;
-  height: 100vh;
-  position: relative; }
+  height: 100vh; }
+  .LockUp__Content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    max-width: 1024px;
+    margin: auto; }
   .LockUp h1 {
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
     margin: 20px 0 50px 0;
     font-size: 7vw;
     color: #726d5d; }
+    @media (min-width: 1024px) {
+      .LockUp h1 {
+        font-size: 50px;
+        margin: 50px 0; } }
   .LockUp h2 {
     font-family: 'Alfa Slab One';
     color: #726d5d;
     font-size: 12vw; }
+    @media (min-width: 1024px) {
+      .LockUp h2 {
+        font-size: 100px; } }
   .LockUp p {
     font-family: 'Raleway', sans-serif;
     font-weight: 300;
     font-size: 15px;
     color: #726d5d;
     text-align: center;
-    padding: 0 20px; }
+    padding: 0 20px;
+    margin: 30px 0;
+    max-width: 670px; }
+    .LockUp p a {
+      color: inherit;
+      white-space: nowrap; }
+    @media (min-width: 1024px) {
+      .LockUp p {
+        font-size: 20px; } }
   .LockUp .word {
     margin-right: 2vw; }
     .LockUp .word:last-child {
       margin-right: 0px; }
+    @media (min-width: 1024px) {
+      .LockUp .word {
+        margin-right: 15px; } }
   .LockUp .save .s {
     color: #4bbbec; }
   .LockUp .save .a {
@@ -86,8 +107,8 @@ em {
 
 form {
   width: 100%;
-  margin-top: 30px; }
-  @media (min-width: 991px) {
+  max-width: 333.33px; }
+  @media (min-width: 1024px) {
     form .first_name, form .last_name {
       width: 48%; }
     form .first_name {
@@ -96,22 +117,6 @@ form {
     form .last_name {
       float: right;
       margin-left: 2%; } }
-  form input:not([type='submit']), form textarea, form select {
-    border: 1px solid #DADADA;
-    color: #888;
-    margin-bottom: 25px;
-    margin-right: 6px;
-    margin-top: 2px;
-    outline: 0 none;
-    padding: 10px 5px;
-    font-size: 12px;
-    line-height: 22px;
-    box-shadow: inset 0px 1px 4px #ECECEC;
-    -moz-box-shadow: inset 0px 1px 4px #ECECEC;
-    -webkit-box-shadow: inset 0px 1px 4px #ECECEC;
-    font-size: 16px;
-    font-size: 1.6rem;
-    letter-spacing: 1px; }
   form input, form textarea, form select {
     display: block;
     width: 100%; }
@@ -134,7 +139,7 @@ form {
   form input[type="submit"] {
     font-size: 16px;
     font-size: 1.6rem;
-    background-color: #726d5d;
+    background-color: #eb165e;
     color: #fff;
     display: inline-block;
     width: 100%;
@@ -151,8 +156,8 @@ form {
     position: relative;
     z-index: 2; }
     form input[type="submit"]:hover {
-      background-color: yellow; }
-    @media (min-width: 991px) {
+      background-color: #f45a48; }
+    @media (min-width: 1024px) {
       form input[type="submit"] {
         display: inline-block;
         width: auto; } }
@@ -173,7 +178,11 @@ form {
   transform: translateY(50px);
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
-  height: 0; }
+  height: 0;
+  margin: 0 !important;
+  padding: 0 !important; }
+  .success_message span {
+    text-decoration: underline; }
 
 .submitted .ss-form-question, .submitted #ss-submit {
   display: none; }

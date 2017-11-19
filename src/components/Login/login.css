@@ -32,7 +32,7 @@
   flex-direction: column;
   align-items: center;
   padding-top: 85px; }
-  @media (min-width: 991px) {
+  @media (min-width: 1024px) {
     .LoginPage {
       justify-content: center;
       padding-top: 0; } }
@@ -76,7 +76,7 @@
     opacity: .7; }
   .LoginPage__Title img {
     width: 100%; }
-  @media (min-width: 991px) {
+  @media (min-width: 1024px) {
     .LoginPage__Title {
       font-size: 150px;
       margin: 0 0 50px 0; } }
@@ -96,15 +96,16 @@
   margin-bottom: 15px;
   font-size: 20px; }
 
-.LoginPage__Password {
+input {
   border: 1px solid #cfc7c4;
   width: 300px;
   padding: 10px 5px;
   border-radius: 5px;
   font-size: 17px;
   transition: all .15s ease-in-out;
-  outline: none; }
-  .LoginPage__Password--error {
+  outline: none;
+  margin-bottom: 20px; }
+  input--error {
     animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
     transform: translate3d(0, 0, 0);
     backface-visibility: hidden;
@@ -131,7 +132,6 @@
   max-width: 150px;
   border: none;
   padding: 8px 20px;
-  margin: 35px 0 0 0;
   background-color: #726d5d;
   color: #fff;
   cursor: pointer;

@@ -126,7 +126,7 @@ $errorColor: $coral;
 	font-size: 20px;
 }
 
-.LoginPage__Password {
+input {
 	border: 1px solid #cfc7c4;
 	width: 300px;
 	padding: 10px 5px;
@@ -134,6 +134,7 @@ $errorColor: $coral;
 	font-size: 17px;
 	transition: all .15s ease-in-out;
 	outline: none;
+	margin-bottom: 20px;
 
 	&--error {
 		animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
@@ -165,7 +166,6 @@ $errorColor: $coral;
 	max-width: 150px;
 	border: none;
 	padding: 8px 20px;
-	margin: 35px 0 0 0;
 	background-color: $buttonColor;
 	color: #fff;
 	cursor: pointer;
