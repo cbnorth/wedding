@@ -10,7 +10,7 @@
 @keyframes smallFadeIn {
   from {
     opacity: 0;
-    transform: translateY(5px); }
+    transform: translateY(-5px); }
   to {
     opacity: 100%;
     transform: translateY(0px); } }
@@ -105,12 +105,13 @@ input {
   transition: all .15s ease-in-out;
   outline: none;
   margin-bottom: 20px; }
-  input--error {
-    animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
-    transform: translate3d(0, 0, 0);
-    backface-visibility: hidden;
-    perspective: 1000px;
-    border-color: #f75947; }
+
+.LoginPage__Password--error {
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  border-color: #f75947; }
 
 .ShowPassword {
   display: block;
@@ -120,7 +121,8 @@ input {
   font-size: 12px;
   position: absolute;
   top: 41px;
-  right: 5px; }
+  right: 5px;
+  cursor: pointer; }
 
 .LoginPage__ButtonContainer {
   display: block;
@@ -147,10 +149,16 @@ input {
 
 .ErrorMessage {
   position: absolute;
-  margin: 5px 0 0 5px;
-  animation: smallFadeIn .25s ease-in-out;
-  animation-fill-mode: forwards;
+  top: 0;
+  padding: 4px 0;
+  background-color: #f75947;
+  width: 100%;
   font-family: 'Raleway', sans-serif;
   font-weight: 300;
   font-size: 15px;
-  color: #f75947; }
+  text-align: center;
+  color: #fff;
+  -webkit-animation: smallFadeIn .25s ease-in-out;
+  animation: smallFadeIn .25s ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards; }

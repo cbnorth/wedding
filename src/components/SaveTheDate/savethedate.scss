@@ -14,10 +14,25 @@ $hover: $orange;
 
 @import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One');
 
+
+@keyframes FadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 100%;
+	}
+}
+
+
 .LockUp {
 	background-color: #edeae4;
 	width: 100%;
 	height: 100vh;
+	-webkit-animation: FadeIn .25s ease-in-out;
+	animation: FadeIn .25s ease-in-out;
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
 
 	&__Content {
 		display: flex;

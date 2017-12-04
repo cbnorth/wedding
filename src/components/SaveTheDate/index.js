@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import { Link, Redirect } from 'react-router-dom'
 import mapImage from './map.jpg'
 import classNames from 'classnames'
+import Cookie from "js.cookie";
 
 import './savethedate.css'
 import './savethedate.css'
@@ -33,6 +35,10 @@ class SaveTheDate extends Component {
 	}
 
 	render() {
+		if (!Cookie.get( "auth" )) {
+      return <Redirect push to="/" />;
+    }
+
 		return (
 			<div className="LockUp">
 				<div className="LockUp__Content">
@@ -58,11 +64,7 @@ class SaveTheDate extends Component {
 					</h1>
 					<h2>Sept. 29, 2018</h2>
 					<p>
-						We're getting married! <br /> Come over and celebrate with us at{' '}
-						<a href="https://thefieldsatwilliegreens.com/" target="_blank">
-							The Fields at Willie’s Greens
-						</a>{' '}
-						in Monroe, Washington on September 29, 2018. Please provide your
+						Chris Burke and Emma James are getting married! The celebration will be held at the <a href="https://thefieldsatwilliegreens.com/" target="_blank">The Fields at Willie’s Greens</a> in Monroe, WA on September 29, 2018. <br /><br />Please provide your
 						email address to receive your formal invitation.
 					</p>
 					<div>

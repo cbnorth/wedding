@@ -3,6 +3,8 @@ import { Link, Redirect } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import loginTitle from './login-title.png';
+import passwordHash from 'password-hash';
+import Cookie from "js.cookie";
 
 
 import './login.css';
@@ -34,17 +36,30 @@ class Login extends Component {
     })
   }
 
+  _setCookie = () => {
+    console.log('cookie setting')
+    Cookie.set(
+      "auth",
+      "true",
+      {
+          domain:  "localhost",
+          expires: "Sept, 29 Jan 2018 03:14:07 GMT",
+          live:    90
+      }
+    );
+  }
+
   _checkPassword = (e) => {
-    console.log(this.state.passwordValue);
-    if (this.state.passwordValue !== "password") {
-      e.preventDefault()
-      this.setState({
-        passwordError: true
-      })
-    } else {
+    if (passwordHash.verify(this.state.passwordValue.toUpperCase(), 'sha1$bb5762c6$1$e48b7bf29058a9ad1e7155b1540c706eb7214e81')) {
       this.setState({
         passwordError: false,
         redirect: true
+      })
+      this._setCookie()
+    } else {
+      e.preventDefault()
+      this.setState({
+        passwordError: true
       })
     }
   }
@@ -56,13 +71,15 @@ class Login extends Component {
       'LoginPage__Password--error': this.state.passwordError
     });
 
-    if (this.state.redirect) {
+    if (this.state.redirect || Cookie.get( "auth" )) {
       return <Redirect push to="/save_the_date" />;
     }
 
     return (
       <div className="LoginPage">
-        {/* <img src={loginTitle} alt="Logo" /> */}
+        {this.state.passwordError &&
+          <div className="ErrorMessage">Wrong password, try again</div>
+        }
         <h1 className="LoginPage__Title"><span>E</span><span>&</span><span>C</span></h1>
         <div className="LoginPage_LoginForm">
           <label className="LoginPage_PasswordLabel" htmlFor="password">
@@ -84,10 +101,7 @@ class Login extends Component {
               onKeyPress={this._handleKeyPress}
               value={this.state.passwordValue}
             />
-              {this.state.passwordError &&
-                <p className="ErrorMessage">Nope</p>
-              }
-              <span className="ShowPassword" onClick={this._toggleShowPassword}>{this.state.showPassword ? "hide" : "show"}</span>
+            <span className="ShowPassword" onClick={this._toggleShowPassword}>{this.state.showPassword ? "hide" : "show"}</span>
             {this.state.passwordValue.length > 0 &&
               <div className="LoginPage__ButtonContainer">
                 <button className="Btn">
@@ -99,10 +113,6 @@ class Login extends Component {
         </div>
       </div>
     );
-  }
-
-  static propTypes = {
-
   }
 }
 
