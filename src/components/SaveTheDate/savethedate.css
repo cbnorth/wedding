@@ -130,6 +130,8 @@ form {
   form input, form textarea, form select {
     display: block;
     width: 100%; }
+    form input:required, form textarea:required, form select:required {
+      box-shadow: none; }
   form label {
     display: block;
     margin: 0px; }

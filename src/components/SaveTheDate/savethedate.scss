@@ -181,6 +181,10 @@ form {
 	input, textarea, select {
 	  display: block;
 	  width: 100%;
+
+		&:required {
+			box-shadow:none;
+		}
 	}
 
 	label {
