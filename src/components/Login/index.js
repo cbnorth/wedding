@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import { Link, Redirect } from 'react-router-dom'
-import PropTypes from 'prop-types'
 import classNames from 'classnames'
-import loginTitle from './login-title.png';
 import passwordHash from 'password-hash';
 import Cookie from "js.cookie";
 
@@ -42,7 +40,7 @@ class Login extends Component {
       "auth",
       "true",
       {
-          domain:  "localhost",
+          domain:  "comeandpartywithus.com",
           expires: "Sept, 29 Jan 2018 03:14:07 GMT",
           live:    90
       }

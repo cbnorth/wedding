@@ -1,8 +1,5 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import { Link, Redirect } from 'react-router-dom'
-import mapImage from './map.jpg'
-import classNames from 'classnames'
+import { Redirect } from 'react-router-dom'
 import Cookie from "js.cookie";
 
 import './savethedate.css'
@@ -75,7 +72,7 @@ class SaveTheDate extends Component {
 					</h1>
 					<h2>Sept. 29, 2018</h2>
 					<p>
-						Chris Burke and Emma James are getting married! The celebration will be held at the <a href="https://thefieldsatwilliegreens.com/" target="_blank">The Fields at Willie’s Greens</a> in Monroe, WA on September 29, 2018.
+						Chris Burke and Emma James are getting married! The celebration will be held at the <a href="https://thefieldsatwilliegreens.com/" target="_blank" rel="noopener noreferrer">The Fields at Willie’s Greens</a> in Monroe, WA on September 29, 2018.
 						<br /><br />
 						{!this.state.submitted && "Please provide your email address to receive your formal invitation."}
 					</p>
@@ -86,6 +83,7 @@ class SaveTheDate extends Component {
 									id="iframe_txlbrchf"
 									name="iframe_txlbrchf"
 									style={{ display: 'none' }}
+									title="googleforms"
 									/>
 									<form
 										id="ss-form"

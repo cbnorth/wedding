@@ -116,17 +116,18 @@ em {
   display: block; }
 
 form {
-  width: 100%;
-  max-width: 333.33px; }
+  width: 100%; }
   @media (min-width: 1024px) {
-    form .first_name, form .last_name {
-      width: 48%; }
-    form .first_name {
-      float: left;
-      margin-right: 2%; }
-    form .last_name {
-      float: right;
-      margin-left: 2%; } }
+    form {
+      max-width: 333.33px; }
+      form .first_name, form .last_name {
+        width: 48%; }
+      form .first_name {
+        float: left;
+        margin-right: 2%; }
+      form .last_name {
+        float: right;
+        margin-left: 2%; } }
   form input, form textarea, form select {
     display: block;
     width: 100%; }
@@ -150,7 +151,6 @@ form {
     margin-bottom: 0; }
   form input[type="submit"] {
     font-size: 16px;
-    font-size: 1.6rem;
     background-color: #eb165e;
     color: #fff;
     display: inline-block;
@@ -158,7 +158,6 @@ form {
     padding: 14px 36px;
     text-align: center;
     text-decoration: none;
-    margin: 10px 0;
     cursor: pointer;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -172,7 +171,7 @@ form {
     @media (min-width: 1024px) {
       form input[type="submit"] {
         display: inline-block;
-        width: auto; } }
+        width: 100%; } }
 
 .required-message, .error-message {
   color: #c43b1d;

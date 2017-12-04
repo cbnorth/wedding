@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Login from './components/Login'
 import SaveTheDate from './components/SaveTheDate'
 import my404Component from './components/my404Component'
 import './App.css'
-import PropTypes from 'prop-types'
 
 const Main = () => (
   <Switch>
@@ -22,10 +21,6 @@ class App extends Component {
         <Main />
       </BrowserRouter>
     );
-  }
-
-  static propTypes = {
-
   }
 }
 

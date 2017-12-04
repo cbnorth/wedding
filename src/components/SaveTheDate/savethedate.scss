@@ -142,9 +142,9 @@ $hover: $orange;
 
 form {
   width: 100%;
-	max-width: 333.33px;
 
   @include breakpoint(med) {
+		max-width: 333.33px;
 
     .first_name, .last_name {
       width: 48%;
@@ -212,7 +212,7 @@ form {
 	}
 
 	input[type="submit"] {
-	    @include font-size(16px);
+	    font-size: 16px;
 	    background-color: $button_color;
 	    color: #fff;
 	    display: inline-block;
@@ -220,7 +220,6 @@ form {
 	    padding: 14px 36px;
 	    text-align: center;
 	    text-decoration: none;
-	    margin: 10px 0;
 	    cursor: pointer;
 	    letter-spacing: 2px;
 	    text-transform: uppercase;
@@ -235,7 +234,7 @@ form {
 
 	    @include breakpoint (med) {
 	      display: inline-block;
-	      width: auto;
+	      width: 100%;
 	    }
 	}
 
