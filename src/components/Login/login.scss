@@ -131,10 +131,14 @@ input {
 	width: 300px;
 	padding: 10px 5px;
 	border-radius: 5px;
-	font-size: 17px;
+	font-size: 15px;
 	transition: all .15s ease-in-out;
 	outline: none;
 	margin-bottom: 20px;
+
+	@include breakpoint(med) {
+		font-size: 17px;
+	}
 }
 
 .LoginPage__Password--error {
