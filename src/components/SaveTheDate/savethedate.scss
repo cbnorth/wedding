@@ -46,8 +46,8 @@ $hover: $orange;
 	h1 {
 		font-family: 'Raleway', sans-serif;
 		font-weight: 700;
-		margin: 20px 0 50px 0;
-		font-size:7vw;
+		margin: 20px 0 30px 0;
+		font-size:11vw;
 		color: $copyColor;
 
 		@include breakpoint(med) {
@@ -59,7 +59,7 @@ $hover: $orange;
 	h2 {
 		font-family: 'Alfa Slab One';
 		color: $copyColor;
-		font-size: 12vw;
+		font-size: 9vw;
 
 		@include breakpoint(med) {
 			font-size: 100px
@@ -118,6 +118,19 @@ $hover: $orange;
 		.t {color: #f77fb6;}
 		.e {color: $orange;}
 		.exp {color: #deab31;}
+	}
+}
+
+.FormContainer {
+	width: 100%;
+	margin: 30px auto;
+	padding: 0 20px;
+	max-width: 500px;
+
+	@include breakpoint(med) {
+		width: auto;
+		max-width: none;
+		margin: 30px auto;
 	}
 }
 

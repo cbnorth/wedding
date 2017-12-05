@@ -76,7 +76,7 @@ class SaveTheDate extends Component {
 						<br /><br />
 						{!this.state.submitted && "Please provide your email address to receive your formal invitation."}
 					</p>
-					<div>
+					<div className="FormContainer">
 						{!this.state.submitted
 							? <div>
 									<iframe

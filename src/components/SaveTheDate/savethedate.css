@@ -40,8 +40,8 @@ em {
   .LockUp h1 {
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
-    margin: 20px 0 50px 0;
-    font-size: 7vw;
+    margin: 20px 0 30px 0;
+    font-size: 11vw;
     color: #726d5d; }
     @media (min-width: 1024px) {
       .LockUp h1 {
@@ -50,7 +50,7 @@ em {
   .LockUp h2 {
     font-family: 'Alfa Slab One';
     color: #726d5d;
-    font-size: 12vw; }
+    font-size: 9vw; }
     @media (min-width: 1024px) {
       .LockUp h2 {
         font-size: 100px; } }
@@ -100,6 +100,17 @@ em {
     color: #f45a48; }
   .LockUp .date .exp {
     color: #deab31; }
+
+.FormContainer {
+  width: 100%;
+  margin: 30px auto;
+  padding: 0 20px;
+  max-width: 500px; }
+  @media (min-width: 1024px) {
+    .FormContainer {
+      width: auto;
+      max-width: none;
+      margin: 30px auto; } }
 
 .Container {
   background-color: #f4efe7;
