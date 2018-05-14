@@ -79,23 +79,23 @@ class Invitation extends Component {
 					<div className="LockUp__Content">
 						<h1>
 							<span className="word Emma">
-								<span className="s">E</span>
-								<span className="a">M</span>
-								<span className="v">M</span>
-								<span className="e">A</span>
+								<span className="e">E</span>
+								<span className="m">M</span>
+								<span className="m2">M</span>
+								<span className="a">A</span>
 							</span>
 							<span className="word and">
 								<span className="white">+</span>
 							</span>
 							<span className="word Chris">
-								<span className="d">C</span>
-								<span className="a">H</span>
-								<span className="t">R</span>
-								<span className="e">I</span>
-								<span className="exp">S</span>
+								<span className="c">C</span>
+								<span className="h">H</span>
+								<span className="r">R</span>
+								<span className="i">I</span>
+								<span className="s">S</span>
 							</span>
 						</h1>
-						<h2>09.29.2018</h2>
+						<h2 className="Date">09.29.2018</h2>
 						<MediaQuery query="(min-width: 1024px)">
 							<Menu items={["schedule", "location", "RSVP", "FAQ", "Registry", "Contact"]} />
 						</MediaQuery>
@@ -129,10 +129,10 @@ class Invitation extends Component {
 				</section>
 				<section className="SectionWhite" id="location">
 						<h3>Location</h3>
-						<a href="https://thefieldsatwilliegreens.com/" target="_blank">The Field's at Williw Green's</a>
+						<a href="https://thefieldsatwilliegreens.com/" target="_blank" rel="noopener noreferrer">The Field's at Williw Green's</a>
 						<p>19501 Tualco Road <br /> Monrow, WA 98272</p>
 						<p>The venue is outdoors but covered, please dress accordingly - the party will continue rain or shine! Free parking is provided.</p>
-						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2678.9527079092018!2d-121.9866846843621!3d47.82113397919959!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x549aa737f6b2134d%3A0x81ec1304c29a76e6!2sThe+Fields+at+Willie+Green&#39;s!5e0!3m2!1sen!2sus!4v1526266233941" width="600" height="450" frameBorder="0" allowFullscreen></iframe>
+						<iframe title="RVSP Form" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2678.9527079092018!2d-121.9866846843621!3d47.82113397919959!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x549aa737f6b2134d%3A0x81ec1304c29a76e6!2sThe+Fields+at+Willie+Green&#39;s!5e0!3m2!1sen!2sus!4v1526266233941" width="600" height="450" frameBorder="0" allowFullscreen></iframe>
 				</section>
 				<section className="SectionDark">
 						<h3>Nearby Accommodations</h3>
@@ -177,10 +177,10 @@ class Invitation extends Component {
 						<div className="ImageBlock">
 							<p>Help us fund our post wedding trip to New Zealand! Contribute online through Blueprint Registries.</p>
 							<div className="ImageContainer">
-								<img  src={newZealand} alt="a beautiful photo of New Zealand"/>
+								<img  src={newZealand} alt="A road in New Zealand, water to the right, mountains in the distance"/>
 							</div>
 						</div>
-						<a href="" target="_blank" className="Button">View Registry</a>
+						<a href="" target="_blank" rel="noopener noreferrer" className="Button">View Registry</a>
 				</section>
 			</div>
 		)

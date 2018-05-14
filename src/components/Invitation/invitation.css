@@ -29,6 +29,9 @@ h3 {
   margin-bottom: 15px;
   text-transform: uppercase; }
 
+p {
+  margin-bottom: 20px; }
+
 .mobileMenu {
   position: absolute;
   top: 0;
@@ -95,7 +98,11 @@ h3 {
   -webkit-animation: FadeIn .25s ease-in-out;
   animation: FadeIn .25s ease-in-out;
   -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards; }
+  animation-fill-mode: forwards;
+  background-image: url(bg.jpg);
+  background-size: 234%;
+  background-position: -283% 0px;
+  padding-bottom: 24%; }
   .Invitation__LockUp__Content {
     display: flex;
     flex-direction: column;
@@ -104,7 +111,7 @@ h3 {
     max-width: 1024px;
     margin: auto; }
   .Invitation__LockUp h1 {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Alfa Slab One';
     font-weight: 700;
     margin: 20px 0 30px 0;
     font-size: 8vw;
@@ -114,8 +121,8 @@ h3 {
         font-size: 50px;
         margin: 50px 0; } }
   .Invitation__LockUp h2 {
-    font-family: 'Alfa Slab One';
-    color: #726d5d;
+    font-family: 'Raleway', sans-serif;
+    color: #fff;
     font-size: 11vw; }
     @media (min-width: 1024px) {
       .Invitation__LockUp h2 {
@@ -142,30 +149,26 @@ h3 {
     @media (min-width: 1024px) {
       .Invitation__LockUp .word {
         margin-right: 15px; } }
-  .Invitation__LockUp .save .s {
-    color: #4bbbec; }
-  .Invitation__LockUp .save .a {
-    color: #14b07f; }
-  .Invitation__LockUp .save .v {
-    color: #a6c62d; }
-  .Invitation__LockUp .save .e {
+  .Invitation__LockUp .Emma .e {
+    color: #edb12d; }
+  .Invitation__LockUp .Emma .m {
+    color: #ff5c49; }
+  .Invitation__LockUp .Emma .m2 {
+    color: #ff83bc; }
+  .Invitation__LockUp .Emma .a {
+    color: #4dc1f4; }
+  .Invitation__LockUp .and {
+    color: #fff; }
+  .Invitation__LockUp .Chris .c {
+    color: #00b4bb; }
+  .Invitation__LockUp .Chris .h {
+    color: #f31761; }
+  .Invitation__LockUp .Chris .r {
     color: #f17569; }
-  .Invitation__LockUp .the .t {
-    color: #deab31; }
-  .Invitation__LockUp .the .h {
-    color: #f45a48; }
-  .Invitation__LockUp .the .e {
-    color: #eb165e; }
-  .Invitation__LockUp .date .d {
-    color: #00aeb5; }
-  .Invitation__LockUp .date .a {
-    color: #4bbbec; }
-  .Invitation__LockUp .date .t {
-    color: #f77fb6; }
-  .Invitation__LockUp .date .e {
-    color: #f45a48; }
-  .Invitation__LockUp .date .exp {
-    color: #deab31; }
+  .Invitation__LockUp .Chris .i {
+    color: #accc2d; }
+  .Invitation__LockUp .Chris .s {
+    color: #0bb588; }
 
 .SectionWhite, .SectionDark {
   padding: 20px 20px; }
