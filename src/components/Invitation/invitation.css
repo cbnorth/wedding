@@ -25,12 +25,37 @@ em {
 body {
   overflow-x: hidden; }
 
-h3 {
-  margin-bottom: 15px;
-  text-transform: uppercase; }
-
 p {
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  color: #726d5d;
+  line-height: 18px; }
+
+li {
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  color: #726d5d;
+  line-height: 18px; }
+
+h3 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 19px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+  color: #726d5d; }
+
+h4 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: #726d5d; }
+
+.invitationPage {
+  background-color: #f7f7f7; }
 
 .mobileMenu {
   position: absolute;
@@ -46,7 +71,7 @@ p {
   z-index: 1000;
   border: none;
   top: 29px;
-  right: 18px;
+  right: 20px;
   cursor: pointer;
   background-color: transparent;
   outline: none; }
@@ -100,9 +125,9 @@ p {
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
   background-image: url(bg.jpg);
-  background-size: 234%;
-  background-position: -283% 0px;
-  padding-bottom: 24%; }
+  background-size: 320%;
+  background-position: -241% 0px;
+  padding-bottom: 18%; }
   .Invitation__LockUp__Content {
     display: flex;
     flex-direction: column;
@@ -113,9 +138,15 @@ p {
   .Invitation__LockUp h1 {
     font-family: 'Alfa Slab One';
     font-weight: 700;
-    margin: 20px 0 30px 0;
+    margin: 85px 0 13px 0;
     font-size: 8vw;
-    color: #726d5d; }
+    color: #726d5d;
+    background-image: url(lockup.png);
+    text-indent: -9999px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: calc(100% - 40px);
+    padding-bottom: 6%; }
     @media (min-width: 1024px) {
       .Invitation__LockUp h1 {
         font-size: 50px;
@@ -123,7 +154,8 @@ p {
   .Invitation__LockUp h2 {
     font-family: 'Raleway', sans-serif;
     color: #fff;
-    font-size: 11vw; }
+    font-size: 54px;
+    letter-spacing: 8px; }
     @media (min-width: 1024px) {
       .Invitation__LockUp h2 {
         font-size: 100px; } }
@@ -149,32 +181,25 @@ p {
     @media (min-width: 1024px) {
       .Invitation__LockUp .word {
         margin-right: 15px; } }
-  .Invitation__LockUp .Emma .e {
-    color: #edb12d; }
-  .Invitation__LockUp .Emma .m {
-    color: #ff5c49; }
-  .Invitation__LockUp .Emma .m2 {
-    color: #ff83bc; }
-  .Invitation__LockUp .Emma .a {
-    color: #4dc1f4; }
-  .Invitation__LockUp .and {
-    color: #fff; }
-  .Invitation__LockUp .Chris .c {
-    color: #00b4bb; }
-  .Invitation__LockUp .Chris .h {
-    color: #f31761; }
-  .Invitation__LockUp .Chris .r {
-    color: #f17569; }
-  .Invitation__LockUp .Chris .i {
-    color: #accc2d; }
-  .Invitation__LockUp .Chris .s {
-    color: #0bb588; }
+
+.AboutUs .Button {
+  margin: 20px 10%;
+  border-radius: 4px;
+  background-color: #f75947; }
+  .AboutUs .Button:hover {
+    background-color: #eb165e; }
 
 .SectionWhite, .SectionDark {
+  transform: translateY(-63px);
   padding: 20px 20px; }
 
 .SectionDark {
   background-color: #f5f2eb; }
+
+.Block {
+  display: inline-block;
+  width: 50%;
+  padding-right: 10px; }
 
 .FormContainer {
   width: 90%;

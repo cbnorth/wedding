@@ -7,6 +7,7 @@ $orange: #f45a48;
 $brown: #f4efe7;
 $slate: #726d5d;
 $tan: #f5f2eb;
+$offwhite: #f7f7f7;
 
 $mainBackground: $brown;
 $darkBackground: $tan;
@@ -31,13 +32,41 @@ body {
 	overflow-x: hidden;
 }
 
-h3 {
-	margin-bottom: 15px;
-	text-transform: uppercase;
-}
-
 p {
 	margin-bottom: 20px;
+	font-family: 'Raleway', sans-serif;
+	font-size: 16px;
+	color: $copyColor;
+	line-height: 18px;
+}
+
+li {
+	font-family: 'Raleway', sans-serif;
+	font-size: 16px;
+	color: $copyColor;
+	line-height: 18px;
+}
+
+h3 {
+	font-family: 'Raleway', sans-serif;
+	font-weight: 700;
+	font-size: 19px;
+	text-transform: uppercase;
+	margin-bottom: 15px;
+	letter-spacing: 1px;
+	color: $copyColor;
+}
+
+h4 {
+	font-family: 'Raleway', sans-serif;
+	font-weight: 700;
+	font-size: 16px;
+	margin-bottom: 5px;
+	color: $copyColor;
+}
+
+.invitationPage {
+	background-color: $offwhite;
 }
 
 .mobileMenu {
@@ -55,7 +84,7 @@ p {
 	z-index: 1000;
 	border: none;
 	top: 29px;
-	right: 18px;
+	right: 20px;
 	cursor: pointer;
 	background-color: transparent;
 	outline: none;
@@ -124,9 +153,9 @@ p {
 	-webkit-animation-fill-mode: forwards;
 	animation-fill-mode: forwards;
 	background-image: url(bg.jpg);
-	background-size: 234%;
-	background-position: -283% 0px;
-	padding-bottom: 24%;
+	background-size: 320%;
+  background-position: -241% 0px;
+  padding-bottom: 18%;
 
 	&__Content {
 		display: flex;
@@ -140,9 +169,15 @@ p {
 	h1 {
 		font-family: 'Alfa Slab One';
 		font-weight: 700;
-		margin: 20px 0 30px 0;
+		margin: 85px 0 13px 0;
 		font-size:8vw;
 		color: $copyColor;
+		background-image: url(lockup.png);
+		text-indent: -9999px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: calc(100% - 40px);
+    padding-bottom: 6%;
 
 		@include breakpoint(med) {
 			font-size: 50px;
@@ -153,7 +188,8 @@ p {
 	h2 {
 		font-family: 'Raleway', sans-serif;
 		color: #fff;
-		font-size: 11vw;
+		font-size: 54px;
+    letter-spacing: 8px;
 
 		@include breakpoint(med) {
 			font-size: 100px
@@ -192,33 +228,32 @@ p {
 			margin-right: 15px;
 		}
 	}
+}
 
-	.Emma {
-		.e {color: #edb12d;}
-		.m {color: #ff5c49;}
-		.m2 {color: #ff83bc;}
-		.a {color: #4dc1f4;}
-	}
+.AboutUs {
+	.Button {
+		margin: 20px 10%;
+		border-radius: 4px;
+		background-color: #f75947;
 
-	.and {
-		color: #fff;
-	}
-
-	.Chris {
-		.c {color: #00b4bb;}
-		.h {color: #f31761;}
-		.r {color: #f17569;}
-		.i {color: #accc2d;}
-		.s {color: #0bb588;}
+		&:hover {
+			background-color: $button_color;
+		}
 	}
 }
 
-
 .SectionWhite, .SectionDark {
+	transform: translateY(-63px);
 	padding: 20px 20px;
 }
 .SectionDark {
 	background-color: $darkBackground;
+}
+
+.Block {
+    display: inline-block;
+    width: 50%;
+		padding-right: 10px;
 }
 
 .FormContainer {

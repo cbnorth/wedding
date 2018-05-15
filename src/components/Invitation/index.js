@@ -64,6 +64,7 @@ class Invitation extends Component {
     }
 		let mobileMenuHandler= classNames({
       'mobileMenu__open': this.state.mobileMenuOpen,
+			invitationPage: true
     });
 
 		return (
@@ -78,32 +79,17 @@ class Invitation extends Component {
 				<section className="Invitation__LockUp">
 					<div className="LockUp__Content">
 						<h1>
-							<span className="word Emma">
-								<span className="e">E</span>
-								<span className="m">M</span>
-								<span className="m2">M</span>
-								<span className="a">A</span>
-							</span>
-							<span className="word and">
-								<span className="white">+</span>
-							</span>
-							<span className="word Chris">
-								<span className="c">C</span>
-								<span className="h">H</span>
-								<span className="r">R</span>
-								<span className="i">I</span>
-								<span className="s">S</span>
-							</span>
+							Emma + Chris
 						</h1>
-						<h2 className="Date">09.29.2018</h2>
+						<h2 className="Date">09.29.18</h2>
 						<MediaQuery query="(min-width: 1024px)">
 							<Menu items={["schedule", "location", "RSVP", "FAQ", "Registry", "Contact"]} />
 						</MediaQuery>
 					</div>
 				</section>
 				<section className="SectionWhite">
-					<div className="">
-						<p>In the summer of 2014 Chris and Emma  met at Artusi, on Capitol Hill. Since that day they've been traveling the same path in life and have a built a strong and unbreakable partnership that has empowered them to travel the world, to buy a home, to lean on each other in goods times and bad and now to get married.</p>
+					<div className="AboutUs">
+						<p>In the summer of 2014 Chris and Emma met on Capitol Hill. They had their first date at Le Zinc (later Naka and then Adana). They thought it was kind of horrible and decided to jump out the window and run down the street to start their date over at what is still one of their favorite spots in the city, Artusi. Since that day they've been traveling the same path in life and have a built a strong and unbreakable partnership that has empowered them to travel the world, to buy a home, to lean on each other in goods times and bad and now to get married.</p>
 						<p>We invite you, our family and dearest friends, to join us on September 29th, 2018 at the celebration of our partnership.</p>
 						<MediaQuery query="(max-width: 1023px)">
 							<button className="Button Button__RSVP" onClick={(e) => this._handleMobileRVSP(e)}>SEND YOUR RSVP</button>
