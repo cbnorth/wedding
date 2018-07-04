@@ -12,7 +12,8 @@ class Login extends Component {
     passwordValue: "",
     passwordError: null,
     passwordErrorMessage: null,
-    showPassword: false
+    showPassword: false,
+    redirect: true
   }
 
   _passwordChange = (e) => {
@@ -48,13 +49,15 @@ class Login extends Component {
   }
 
   _checkPassword = (e) => {
-    if (passwordHash.verify(this.state.passwordValue.toUpperCase(), 'sha1$bb5762c6$1$e48b7bf29058a9ad1e7155b1540c706eb7214e81')) {
+    if (passwordHash.verify(this.state.passwordValue.toUpperCase(), 'sha1$354ac47b$1$37ff7794c42e8570fc25f2d80c565b17309eab4a')) {
+      console.log('correct password');
       this.setState({
         passwordError: false,
         redirect: true
       })
       this._setCookie()
     } else {
+      console.log('incorrect password');
       e.preventDefault()
       this.setState({
         passwordError: true
@@ -64,13 +67,15 @@ class Login extends Component {
 
 
   render() {
+    var hashedPassword = passwordHash.generate('123');
+    console.log(hashedPassword);
     let inputClass = classNames({
       LoginPage__Password: true,
       'LoginPage__Password--error': this.state.passwordError
     });
 
     if (this.state.redirect || Cookie.get( "auth" )) {
-      return <Redirect push to="/save_the_date" />;
+      return <Redirect push to="/invitation" />;
     }
 
     return (

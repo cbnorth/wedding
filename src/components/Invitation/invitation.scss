@@ -14,6 +14,10 @@ $darkBackground: $tan;
 $copyColor: $slate;
 $button_color:  $magenta;
 
+$offset: 127px;
+$desktopOffset: 135px;
+$menuTransitionTime: .15s;
+
 $hover: $orange;
 
 @import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One');
@@ -30,6 +34,8 @@ $hover: $orange;
 
 body {
 	overflow-x: hidden;
+	background-color: #f7f7f7;
+	-webkit-font-smoothing: antialiased;
 }
 
 p {
@@ -37,7 +43,7 @@ p {
 	font-family: 'Raleway', sans-serif;
 	font-size: 16px;
 	color: $copyColor;
-	line-height: 18px;
+	line-height: 21px;
 }
 
 li {
@@ -50,11 +56,16 @@ li {
 h3 {
 	font-family: 'Raleway', sans-serif;
 	font-weight: 700;
-	font-size: 19px;
+	font-size: 21px;
 	text-transform: uppercase;
-	margin-bottom: 15px;
+	margin-bottom: 20px;
 	letter-spacing: 1px;
-	color: $copyColor;
+	color: #726d5d;
+
+	@include breakpoint(med) {
+		font-size: 30px;
+		margin-bottom: 30px;
+	}
 }
 
 h4 {
@@ -65,18 +76,34 @@ h4 {
 	color: $copyColor;
 }
 
-.invitationPage {
-	background-color: $offwhite;
+a {
+	color: $copyColor;
 }
 
-.mobileMenu {
+.invitationPage {
+	background-color: $offwhite;
+	transition: transform $menuTransitionTime ease-in-out;
+
+
+	@include breakpoint(med) {
+		transform: translateX(0px) !important;
+		transition: none !important;
+	}
+}
+
+.SectionInner {
+	max-width: 1450px;
+	margin: auto;
+}
+
+.MobileMenu {
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
 }
 
-.mobileMenu__Button {
+.MobileMenu__Button {
 	width: 26px;
 	height: 19px;
 	display: inline-block;
@@ -117,7 +144,7 @@ h4 {
 	}
 }
 
-.mobileMenu__items {
+.MobileMenu__items {
 	position: absolute;
 	top: 26px;
 	right: -104px;
@@ -125,6 +152,7 @@ h4 {
 	z-index: 1000;
 	opacity: 0;
 	visibility: hidden;
+	transition: opacity $menuTransitionTime ease-in-out;
 
 	a {
 		display: block;
@@ -135,13 +163,26 @@ h4 {
 	}
 }
 
-
-.mobileMenu__open {
+.MobileMenu__open {
 	position: relative;
-	left: -178px;
-	.mobileMenu__items {
+	transform: translateX(-178px);
+
+	.MobileMenu__items {
 		opacity: 1;
 		visibility: visible;
+	}
+}
+
+.Menu__items {
+	width: 80%;
+	display: flex;
+	justify-content: space-between;
+	margin-top: 45px;
+
+	a {
+		text-decoration: none;
+		font-size: 20px;
+		text-transform: uppercase;
 	}
 }
 
@@ -155,7 +196,9 @@ h4 {
 	background-image: url(bg.jpg);
 	background-size: 320%;
   background-position: -241% 0px;
-  padding-bottom: 18%;
+  padding-bottom: 36%;
+	max-width: 1450px;
+	margin: auto;
 
 	&__Content {
 		display: flex;
@@ -166,22 +209,23 @@ h4 {
 		margin: auto;
 	}
 
-	h1 {
-		font-family: 'Alfa Slab One';
-		font-weight: 700;
-		margin: 85px 0 13px 0;
-		font-size:8vw;
-		color: $copyColor;
-		background-image: url(lockup.png);
-		text-indent: -9999px;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    width: calc(100% - 40px);
-    padding-bottom: 6%;
+	.LockUp__Title {
+		width: 80%;
+		margin: auto;
+		max-width: 900px;
+		margin: 20% 0 13px 0;
 
-		@include breakpoint(med) {
-			font-size: 50px;
-			margin: 50px 0;
+		h1 {
+			font-family: 'Alfa Slab One';
+			font-weight: 700;
+			font-size:8vw;
+			color: $copyColor;
+			background-image: url(lockup.png);
+			text-indent: -9999px;
+	    background-size: 100%;
+			background-position: center;
+	    background-repeat: no-repeat;
+	    padding-bottom: 6%;
 		}
 	}
 
@@ -192,7 +236,9 @@ h4 {
     letter-spacing: 8px;
 
 		@include breakpoint(med) {
-			font-size: 100px
+			font-size: 92px;
+			letter-spacing: 4px;
+			font-weight: 500;
 		}
 	}
 
@@ -230,24 +276,125 @@ h4 {
 	}
 }
 
+.overflowImage {
+	@include breakpoint(med) {
+		position: relative;
+		z-index: 10000;
+		overflow: visible;
+
+		img {
+			position: absolute;
+			right: 0;
+		}
+	}
+}
+
 .AboutUs {
 	.Button {
-		margin: 20px 10%;
-		border-radius: 4px;
 		background-color: #f75947;
 
 		&:hover {
 			background-color: $button_color;
 		}
 	}
+
+	&__Photo {
+		transform: translateY(-80px);
+	}
+
+	@include breakpoint(med) {
+		display: flex;
+		position: relative;
+
+		&__Copy {
+			padding-right: 40px;
+		}
+
+		p {
+			max-width: 51%;
+		}
+	}
+
+	@include breakpoint(lg) {
+		p {
+			max-width: 65%;
+		}
+	}
+}
+
+.DetailsContainer {
+	display: flex;
+
+	&__Copy {
+		flex: 1;
+		max-width: 300px;
+		padding-right: 40px;
+
+		@include breakpoint(med) {
+			margin-right: 40px;
+		}
+	}
+}
+
+.LocationContainer {
+	@include breakpoint(med) {
+		display: flex;
+		justify-content: space-between;
+		flex-direction: row-reverse;
+		align-items: center;
+
+		 &__Copy {
+			 padding-left: 25px;
+		 }
+
+		 iframe {
+			 padding-right: 25px;
+		 }
+	}
+}
+
+.FAQs {
+	li {
+		margin-bottom: 20px;
+		color: $copyColor;
+	}
+
+	h4 {
+		font-weight: 700;
+		margin-bottom: 15px;
+	}
+
+	span {
+		font-weight: normal;
+		display: block;
+		padding-bottom: 10px;
+	}
+
+	@include breakpoint(med) {
+		columns: 2;
+    column-gap: 60px;
+
+		li {
+			break-inside: avoid;
+		}
+	}
 }
 
 .SectionWhite, .SectionDark {
-	transform: translateY(-63px);
+	transform: translateY(-$offset);
 	padding: 20px 20px;
+
+	@include breakpoint(med) {
+		padding: 60px 60px;
+		transform: translateY(-$desktopOffset);
+	}
 }
 .SectionDark {
 	background-color: $darkBackground;
+
+	&--darker {
+		background-color: #edeae4;
+	}
 }
 
 .Block {
@@ -286,48 +433,167 @@ h4 {
 	display: block;
 }
 
-.MobileRVSPForm {
-	position: absolute;
+.Exit {
+	display: none;
+}
+
+.MobileRSVPForm {
+	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
+	padding: 20px;
 	z-index: 2000;
 	height: 100vh;
 	background-color: $mainBackground;
-}
+	overflow-y: scroll;
 
-.FAQ {
-	li {
-		font-weight: bold;
-		color: $copyColor;
+	h1 {
+		font-family: 'Raleway', sans-serif;
+		font-weight: 700;
+		font-size: 25px;
+		text-transform: uppercase;
+		margin-bottom: 20px;
+		letter-spacing: 1px;
+		color: #726d5d;
 	}
-	span {
-		font-weight: normal;
+
+	.Exit {
+		text-indent: -999px;
+    border: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+		background: transparent;
+		cursor: pointer;
+		height: 37px;
+		outline: none;
 		display: block;
-		padding: 10px 0;
+
+		&:after, &:before {
+			content: "";
+			width: 35px;
+			height: 3px;
+			background-color: #fff;
+			display: block;
+			transform: rotate(45deg);
+		}
+		&:before {
+			transform: rotate(-45deg);
+			position: relative;
+			top: 1px;
+		}
 	}
 }
 
-.ImageBlock {
-	display: flex;
+.GoogleMap {
+	width: 100%;
+	height: 360px;
 }
 
-.ImageContainer {
+.Registry {
+	.Button {
+		background-color: #0baf84;
+		display: block;
+
+		&:hover {
+			background-color: #00aeb5;
+		}
+	}
+
+	&__Content {
+		flex-direction: column-reverse;
+		display: flex;
+
+		img {
+			margin: 0 auto 40px auto;
+			height: 200px;
+			width: auto;
+		}
+
+		@include breakpoint(med) {
+			flex-direction: row-reverse;
+
+			p, .ImageContainer {
+				flex: 1;
+				padding-right: 80px;
+			}
+
+			img {
+				margin-bottom: 0;
+				height: auto;
+			}
+
+			.Button {
+				margin: 30px 0 0 0;
+			}
+		}
+	}
+
+	.ImageContainer {
     overflow: hidden;
-		height: 125px;
+		height: auto;
+
+		@include breakpoint(med) {
+			height: auto;
+		}
+	}
+
+	.ImageContainer img {
+    position: relative;
+
+		@include breakpoint(med) {
+			width: 100%;
+			left: 0;
+		}
+	}
 }
 
-.ImageContainer img {
-    width: 164%;
-    position: relative;
-    left: -48px;
+.Footer {
+	background-color: #9c998d;
+	position: relative;
+	h3, p {
+		color: #fff;
+	}
+
+	&:after {
+		content: '';
+    display: block;
+    position: absolute;
+    width: calc(100% + 40px);
+    background-color: inherit;
+    bottom: -63px;
+    height: 150px;
+    left: -20px;
+	}
+
+	@include breakpoint(med) {
+		&:after {
+			bottom: -145px;
+			height: 150px;
+		}
+	}
 }
 
 form {
   width: 100%;
 
+	.FlexContainer {
+		display: flex;
+		justify-content: space-between;
+
+		&--alignLeft {
+			justify-content: flex-start;
+		}
+	}
+
+	.RadioGroup {
+		display: flex;
+	}
+
   @include breakpoint(med) {
-		max-width: 333.33px;
+		max-width: 1200px;
+		margin: auto;
 
     .first_name, .last_name {
       width: 48%;
@@ -342,6 +608,21 @@ form {
       float: right;
       margin-left: 2%;
     }
+
+		.left {
+			display: inline-block;
+			width: 50%;
+			padding-right: 20px;
+		}
+		.right {
+			display: inline-block;
+			width: 50%;
+		}
+
+		.submit_container {
+			max-width: 300px;
+			margin: 30px 0px;
+		}
   }
 
 	// input:not([type='submit']), textarea, select {
@@ -388,6 +669,9 @@ form {
 	  padding: 10px;
 	  height: 200px;
 	  line-height: 24px;
+		color: $copyColor;
+		font-family: 'Raleway', sans-serif;
+		font-size: 16px;
 	}
 
 	textarea.active {
@@ -410,6 +694,7 @@ form {
 	    border: none;
 	    position: relative;
 	    z-index: 2;
+			margin-top: 25px;
 
 	    &:hover {
 	      background-color: $hover;
@@ -419,9 +704,69 @@ form {
 				font-size: 16px;
 	      display: inline-block;
 	      width: 100%;
+				margin-top: 0;
 	    }
 	}
 
+	label {
+		color: $copyColor;
+	}
+
+	input[type=radio] {
+    width: auto;
+    height: auto;
+    padding: 10px;
+
+		&:checked {
+			border-color: blue;
+		}
+	}
+	.radio--yes {
+		border: 1px solid green;
+	}
+	.radio--no {
+		border: 1px solid red;
+	}
+
+	.radioLabel {
+		line-height: 22px;
+		padding-left: 14px;
+	}
+
+	.checkbox {
+		width: 25px;
+
+		&:checked {
+			border-color: blue;
+		}
+	}
+
+	.selectContainer {
+		label {
+		    margin-bottom: 20px;
+		}
+
+		select {
+			max-width: 150px;
+		}
+	}
+
+
+
+	// .ss-choice-item-control {
+  //   width: 20px;
+  //   height: 20px;
+  //   border-radius: 0;
+	//
+	// 	input {
+	// 		border: none;
+	// 	}
+	// }
+
+}
+
+.isHidden {
+	display: none;
 }
 
 
@@ -461,12 +806,14 @@ p.success_message {
 }
 
 .Button {
-	font-size: 15px;
+	font-size: 17px;
 	background-color: #eb165e;
 	color: #fff;
 	display: inline-block;
 	width: 80%;
 	padding: 12px 36px;
+	margin: 20px 10%;
+	border-radius: 4px;
 	text-align: center;
 	text-decoration: none;
 	cursor: pointer;
@@ -478,4 +825,5 @@ p.success_message {
 	border: none;
 	position: relative;
 	z-index: 2;
+	font-weight: 700;
 }

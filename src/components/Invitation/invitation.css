@@ -23,14 +23,16 @@ em {
     opacity: 100%; } }
 
 body {
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  background-color: #f7f7f7;
+  -webkit-font-smoothing: antialiased; }
 
 p {
   margin-bottom: 20px;
   font-family: 'Raleway', sans-serif;
   font-size: 16px;
   color: #726d5d;
-  line-height: 18px; }
+  line-height: 21px; }
 
 li {
   font-family: 'Raleway', sans-serif;
@@ -41,11 +43,15 @@ li {
 h3 {
   font-family: 'Raleway', sans-serif;
   font-weight: 700;
-  font-size: 19px;
+  font-size: 21px;
   text-transform: uppercase;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   letter-spacing: 1px;
   color: #726d5d; }
+  @media (min-width: 1024px) {
+    h3 {
+      font-size: 30px;
+      margin-bottom: 30px; } }
 
 h4 {
   font-family: 'Raleway', sans-serif;
@@ -54,16 +60,28 @@ h4 {
   margin-bottom: 5px;
   color: #726d5d; }
 
-.invitationPage {
-  background-color: #f7f7f7; }
+a {
+  color: #726d5d; }
 
-.mobileMenu {
+.invitationPage {
+  background-color: #f7f7f7;
+  transition: transform 0.15s ease-in-out; }
+  @media (min-width: 1024px) {
+    .invitationPage {
+      transform: translateX(0px) !important;
+      transition: none !important; } }
+
+.SectionInner {
+  max-width: 1450px;
+  margin: auto; }
+
+.MobileMenu {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%; }
 
-.mobileMenu__Button {
+.MobileMenu__Button {
   width: 26px;
   height: 19px;
   display: inline-block;
@@ -75,7 +93,7 @@ h4 {
   cursor: pointer;
   background-color: transparent;
   outline: none; }
-  .mobileMenu__Button span {
+  .MobileMenu__Button span {
     background-color: #fff;
     width: 26px;
     height: 3px;
@@ -83,39 +101,50 @@ h4 {
     border: none;
     position: relative;
     top: 8px; }
-    .mobileMenu__Button span:after, .mobileMenu__Button span:before {
+    .MobileMenu__Button span:after, .MobileMenu__Button span:before {
       content: "";
       background-color: #fff;
       width: 26px;
       height: 3px;
       display: inline-block;
       position: relative; }
-    .mobileMenu__Button span:before {
+    .MobileMenu__Button span:before {
       top: -15px; }
-    .mobileMenu__Button span:after {
+    .MobileMenu__Button span:after {
       bottom: 14px; }
 
-.mobileMenu__items {
+.MobileMenu__items {
   position: absolute;
   top: 26px;
   right: -104px;
   width: auto;
   z-index: 1000;
   opacity: 0;
-  visibility: hidden; }
-  .mobileMenu__items a {
+  visibility: hidden;
+  transition: opacity 0.15s ease-in-out; }
+  .MobileMenu__items a {
     display: block;
     margin: 13px 0px;
     color: #726d5d;
     text-transform: uppercase;
     text-decoration: none; }
 
-.mobileMenu__open {
+.MobileMenu__open {
   position: relative;
-  left: -178px; }
-  .mobileMenu__open .mobileMenu__items {
+  transform: translateX(-178px); }
+  .MobileMenu__open .MobileMenu__items {
     opacity: 1;
     visibility: visible; }
+
+.Menu__items {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 45px; }
+  .Menu__items a {
+    text-decoration: none;
+    font-size: 20px;
+    text-transform: uppercase; }
 
 .Invitation__LockUp {
   background-color: #edeae4;
@@ -127,7 +156,9 @@ h4 {
   background-image: url(bg.jpg);
   background-size: 320%;
   background-position: -241% 0px;
-  padding-bottom: 18%; }
+  padding-bottom: 36%;
+  max-width: 1450px;
+  margin: auto; }
   .Invitation__LockUp__Content {
     display: flex;
     flex-direction: column;
@@ -135,22 +166,22 @@ h4 {
     position: relative;
     max-width: 1024px;
     margin: auto; }
-  .Invitation__LockUp h1 {
-    font-family: 'Alfa Slab One';
-    font-weight: 700;
-    margin: 85px 0 13px 0;
-    font-size: 8vw;
-    color: #726d5d;
-    background-image: url(lockup.png);
-    text-indent: -9999px;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    width: calc(100% - 40px);
-    padding-bottom: 6%; }
-    @media (min-width: 1024px) {
-      .Invitation__LockUp h1 {
-        font-size: 50px;
-        margin: 50px 0; } }
+  .Invitation__LockUp .LockUp__Title {
+    width: 80%;
+    margin: auto;
+    max-width: 900px;
+    margin: 20% 0 13px 0; }
+    .Invitation__LockUp .LockUp__Title h1 {
+      font-family: 'Alfa Slab One';
+      font-weight: 700;
+      font-size: 8vw;
+      color: #726d5d;
+      background-image: url(lockup.png);
+      text-indent: -9999px;
+      background-size: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      padding-bottom: 6%; }
   .Invitation__LockUp h2 {
     font-family: 'Raleway', sans-serif;
     color: #fff;
@@ -158,7 +189,9 @@ h4 {
     letter-spacing: 8px; }
     @media (min-width: 1024px) {
       .Invitation__LockUp h2 {
-        font-size: 100px; } }
+        font-size: 92px;
+        letter-spacing: 4px;
+        font-weight: 500; } }
   .Invitation__LockUp p {
     font-family: 'Raleway', sans-serif;
     font-weight: 300;
@@ -182,19 +215,89 @@ h4 {
       .Invitation__LockUp .word {
         margin-right: 15px; } }
 
+@media (min-width: 1024px) {
+  .overflowImage {
+    position: relative;
+    z-index: 10000;
+    overflow: visible; }
+    .overflowImage img {
+      position: absolute;
+      right: 0; } }
+
 .AboutUs .Button {
-  margin: 20px 10%;
-  border-radius: 4px;
   background-color: #f75947; }
   .AboutUs .Button:hover {
     background-color: #eb165e; }
 
+.AboutUs__Photo {
+  transform: translateY(-80px); }
+
+@media (min-width: 1024px) {
+  .AboutUs {
+    display: flex;
+    position: relative; }
+    .AboutUs__Copy {
+      padding-right: 40px; }
+    .AboutUs p {
+      max-width: 51%; } }
+
+@media (min-width: 1440px) {
+  .AboutUs p {
+    max-width: 65%; } }
+
+.DetailsContainer {
+  display: flex; }
+  .DetailsContainer__Copy {
+    flex: 1;
+    max-width: 300px;
+    padding-right: 40px; }
+    @media (min-width: 1024px) {
+      .DetailsContainer__Copy {
+        margin-right: 40px; } }
+
+@media (min-width: 1024px) {
+  .LocationContainer {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    align-items: center; }
+    .LocationContainer__Copy {
+      padding-left: 25px; }
+    .LocationContainer iframe {
+      padding-right: 25px; } }
+
+.FAQs li {
+  margin-bottom: 20px;
+  color: #726d5d; }
+
+.FAQs h4 {
+  font-weight: 700;
+  margin-bottom: 15px; }
+
+.FAQs span {
+  font-weight: normal;
+  display: block;
+  padding-bottom: 10px; }
+
+@media (min-width: 1024px) {
+  .FAQs {
+    columns: 2;
+    column-gap: 60px; }
+    .FAQs li {
+      break-inside: avoid; } }
+
 .SectionWhite, .SectionDark {
-  transform: translateY(-63px);
+  transform: translateY(-127px);
   padding: 20px 20px; }
+  @media (min-width: 1024px) {
+    .SectionWhite, .SectionDark {
+      padding: 60px 60px;
+      transform: translateY(-135px); } }
 
 .SectionDark {
   background-color: #f5f2eb; }
+  .SectionDark--darker {
+    background-color: #edeae4; }
 
 .Block {
   display: inline-block;
@@ -225,41 +328,125 @@ h4 {
   padding-bottom: 23%;
   display: block; }
 
-.MobileRVSPForm {
-  position: absolute;
+.Exit {
+  display: none; }
+
+.MobileRSVPForm {
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
+  padding: 20px;
   z-index: 2000;
   height: 100vh;
-  background-color: #f4efe7; }
+  background-color: #f4efe7;
+  overflow-y: scroll; }
+  .MobileRSVPForm h1 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 25px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    color: #726d5d; }
+  .MobileRSVPForm .Exit {
+    text-indent: -999px;
+    border: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    cursor: pointer;
+    height: 37px;
+    outline: none;
+    display: block; }
+    .MobileRSVPForm .Exit:after, .MobileRSVPForm .Exit:before {
+      content: "";
+      width: 35px;
+      height: 3px;
+      background-color: #fff;
+      display: block;
+      transform: rotate(45deg); }
+    .MobileRSVPForm .Exit:before {
+      transform: rotate(-45deg);
+      position: relative;
+      top: 1px; }
 
-.FAQ li {
-  font-weight: bold;
-  color: #726d5d; }
+.GoogleMap {
+  width: 100%;
+  height: 360px; }
 
-.FAQ span {
-  font-weight: normal;
-  display: block;
-  padding: 10px 0; }
+.Registry .Button {
+  background-color: #0baf84;
+  display: block; }
+  .Registry .Button:hover {
+    background-color: #00aeb5; }
 
-.ImageBlock {
+.Registry__Content {
+  flex-direction: column-reverse;
   display: flex; }
+  .Registry__Content img {
+    margin: 0 auto 40px auto;
+    height: 200px;
+    width: auto; }
+  @media (min-width: 1024px) {
+    .Registry__Content {
+      flex-direction: row-reverse; }
+      .Registry__Content p, .Registry__Content .ImageContainer {
+        flex: 1;
+        padding-right: 80px; }
+      .Registry__Content img {
+        margin-bottom: 0;
+        height: auto; }
+      .Registry__Content .Button {
+        margin: 30px 0 0 0; } }
 
-.ImageContainer {
+.Registry .ImageContainer {
   overflow: hidden;
-  height: 125px; }
+  height: auto; }
+  @media (min-width: 1024px) {
+    .Registry .ImageContainer {
+      height: auto; } }
 
-.ImageContainer img {
-  width: 164%;
-  position: relative;
-  left: -48px; }
+.Registry .ImageContainer img {
+  position: relative; }
+  @media (min-width: 1024px) {
+    .Registry .ImageContainer img {
+      width: 100%;
+      left: 0; } }
+
+.Footer {
+  background-color: #9c998d;
+  position: relative; }
+  .Footer h3, .Footer p {
+    color: #fff; }
+  .Footer:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: calc(100% + 40px);
+    background-color: inherit;
+    bottom: -63px;
+    height: 150px;
+    left: -20px; }
+  @media (min-width: 1024px) {
+    .Footer:after {
+      bottom: -145px;
+      height: 150px; } }
 
 form {
   width: 100%; }
+  form .FlexContainer {
+    display: flex;
+    justify-content: space-between; }
+    form .FlexContainer--alignLeft {
+      justify-content: flex-start; }
+  form .RadioGroup {
+    display: flex; }
   @media (min-width: 1024px) {
     form {
-      max-width: 333.33px; }
+      max-width: 1200px;
+      margin: auto; }
       form .first_name, form .last_name {
         width: 48%; }
       form .first_name {
@@ -267,7 +454,17 @@ form {
         margin-right: 2%; }
       form .last_name {
         float: right;
-        margin-left: 2%; } }
+        margin-left: 2%; }
+      form .left {
+        display: inline-block;
+        width: 50%;
+        padding-right: 20px; }
+      form .right {
+        display: inline-block;
+        width: 50%; }
+      form .submit_container {
+        max-width: 300px;
+        margin: 30px 0px; } }
   form input, form textarea, form select {
     display: block;
     width: 100%; }
@@ -286,7 +483,10 @@ form {
   form textarea {
     padding: 10px;
     height: 200px;
-    line-height: 24px; }
+    line-height: 24px;
+    color: #726d5d;
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px; }
   form textarea.active {
     margin-bottom: 0; }
   form input[type="submit"] {
@@ -305,14 +505,42 @@ form {
     transition: background-color 0.15s ease;
     border: none;
     position: relative;
-    z-index: 2; }
+    z-index: 2;
+    margin-top: 25px; }
     form input[type="submit"]:hover {
       background-color: #f45a48; }
     @media (min-width: 1024px) {
       form input[type="submit"] {
         font-size: 16px;
         display: inline-block;
-        width: 100%; } }
+        width: 100%;
+        margin-top: 0; } }
+  form label {
+    color: #726d5d; }
+  form input[type=radio] {
+    width: auto;
+    height: auto;
+    padding: 10px; }
+    form input[type=radio]:checked {
+      border-color: blue; }
+  form .radio--yes {
+    border: 1px solid green; }
+  form .radio--no {
+    border: 1px solid red; }
+  form .radioLabel {
+    line-height: 22px;
+    padding-left: 14px; }
+  form .checkbox {
+    width: 25px; }
+    form .checkbox:checked {
+      border-color: blue; }
+  form .selectContainer label {
+    margin-bottom: 20px; }
+  form .selectContainer select {
+    max-width: 150px; }
+
+.isHidden {
+  display: none; }
 
 .required-message, .error-message {
   color: #c43b1d;
@@ -351,12 +579,14 @@ p.success_message {
   height: auto; }
 
 .Button {
-  font-size: 15px;
+  font-size: 17px;
   background-color: #eb165e;
   color: #fff;
   display: inline-block;
   width: 80%;
   padding: 12px 36px;
+  margin: 20px 10%;
+  border-radius: 4px;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
@@ -367,4 +597,5 @@ p.success_message {
   transition: background-color 0.15s ease;
   border: none;
   position: relative;
-  z-index: 2; }
+  z-index: 2;
+  font-weight: 700; }
