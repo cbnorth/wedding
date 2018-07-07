@@ -13,7 +13,7 @@ class Login extends Component {
     passwordError: null,
     passwordErrorMessage: null,
     showPassword: false,
-    redirect: true
+    redirect: false
   }
 
   _passwordChange = (e) => {
@@ -49,15 +49,13 @@ class Login extends Component {
   }
 
   _checkPassword = (e) => {
-    if (passwordHash.verify(this.state.passwordValue.toUpperCase(), 'sha1$354ac47b$1$37ff7794c42e8570fc25f2d80c565b17309eab4a')) {
-      console.log('correct password');
+    if (passwordHash.verify(this.state.passwordValue.toUpperCase(), 'sha1$a443347b$1$002aa4d1d8c66ad438a21eb804b31e7dd7616566')) {
       this.setState({
         passwordError: false,
         redirect: true
       })
       this._setCookie()
     } else {
-      console.log('incorrect password');
       e.preventDefault()
       this.setState({
         passwordError: true
@@ -67,8 +65,6 @@ class Login extends Component {
 
 
   render() {
-    var hashedPassword = passwordHash.generate('123');
-    console.log(hashedPassword);
     let inputClass = classNames({
       LoginPage__Password: true,
       'LoginPage__Password--error': this.state.passwordError

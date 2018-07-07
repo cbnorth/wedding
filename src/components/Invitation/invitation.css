@@ -63,6 +63,9 @@ h4 {
 a {
   color: #726d5d; }
 
+.nobreak {
+  white-space: nowrap; }
+
 .invitationPage {
   background-color: #f7f7f7;
   transition: transform 0.15s ease-in-out; }
@@ -157,7 +160,6 @@ a {
   background-size: 320%;
   background-position: -241% 0px;
   padding-bottom: 36%;
-  max-width: 1450px;
   margin: auto; }
   .Invitation__LockUp__Content {
     display: flex;
@@ -214,12 +216,20 @@ a {
     @media (min-width: 1024px) {
       .Invitation__LockUp .word {
         margin-right: 15px; } }
+  @media (min-width: 1024px) {
+    .Invitation__LockUp {
+      height: 884px;
+      padding-bottom: 0;
+      background-size: 3550px;
+      background-repeat: no-repeat;
+      background-position: top center; } }
 
 @media (min-width: 1024px) {
   .overflowImage {
     position: relative;
     z-index: 10000;
-    overflow: visible; }
+    overflow: visible;
+    max-height: 370px; }
     .overflowImage img {
       position: absolute;
       right: 0; } }
@@ -237,7 +247,8 @@ a {
     display: flex;
     position: relative; }
     .AboutUs__Copy {
-      padding-right: 40px; }
+      padding-right: 40px;
+      transform: translateY(-35px); }
     .AboutUs p {
       max-width: 51%; } }
 
@@ -246,7 +257,8 @@ a {
     max-width: 65%; } }
 
 .DetailsContainer {
-  display: flex; }
+  display: flex;
+  flex-direction: column; }
   .DetailsContainer__Copy {
     flex: 1;
     max-width: 300px;
@@ -254,6 +266,9 @@ a {
     @media (min-width: 1024px) {
       .DetailsContainer__Copy {
         margin-right: 40px; } }
+  @media (min-width: 1024px) {
+    .DetailsContainer {
+      flex-direction: row; } }
 
 @media (min-width: 1024px) {
   .LocationContainer {
@@ -292,7 +307,7 @@ a {
   @media (min-width: 1024px) {
     .SectionWhite, .SectionDark {
       padding: 60px 60px;
-      transform: translateY(-135px); } }
+      transform: translateY(0); } }
 
 .SectionDark {
   background-color: #f5f2eb; }
@@ -350,27 +365,20 @@ a {
     letter-spacing: 1px;
     color: #726d5d; }
   .MobileRSVPForm .Exit {
-    text-indent: -999px;
     border: none;
     position: absolute;
     top: 20px;
     right: 20px;
-    background: transparent;
     cursor: pointer;
     height: 37px;
+    width: 37px;
     outline: none;
-    display: block; }
-    .MobileRSVPForm .Exit:after, .MobileRSVPForm .Exit:before {
-      content: "";
-      width: 35px;
-      height: 3px;
-      background-color: #fff;
-      display: block;
-      transform: rotate(45deg); }
-    .MobileRSVPForm .Exit:before {
-      transform: rotate(-45deg);
-      position: relative;
-      top: 1px; }
+    display: block;
+    background-image: url(close-icon.png);
+    background-size: 26px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: top right; }
 
 .GoogleMap {
   width: 100%;
@@ -391,7 +399,7 @@ a {
     width: auto; }
   @media (min-width: 1024px) {
     .Registry__Content {
-      flex-direction: row-reverse; }
+      flex-direction: row; }
       .Registry__Content p, .Registry__Content .ImageContainer {
         flex: 1;
         padding-right: 80px; }
@@ -424,15 +432,18 @@ a {
     content: '';
     display: block;
     position: absolute;
-    width: calc(100% + 40px);
-    background-color: inherit;
-    bottom: -63px;
-    height: 150px;
-    left: -20px; }
+    top: 134px;
+    left: 0px;
+    width: 100%;
+    height: 157px;
+    background-color: #9c998d; }
+  .Footer p {
+    max-width: 600px; }
   @media (min-width: 1024px) {
+    .Footer p {
+      max-width: 70%; }
     .Footer:after {
-      bottom: -145px;
-      height: 150px; } }
+      content: none; } }
 
 form {
   width: 100%; }
@@ -445,8 +456,7 @@ form {
     display: flex; }
   @media (min-width: 1024px) {
     form {
-      max-width: 1200px;
-      margin: auto; }
+      max-width: 1200px; }
       form .first_name, form .last_name {
         width: 48%; }
       form .first_name {
@@ -461,10 +471,7 @@ form {
         padding-right: 20px; }
       form .right {
         display: inline-block;
-        width: 50%; }
-      form .submit_container {
-        max-width: 300px;
-        margin: 30px 0px; } }
+        width: 50%; } }
   form input, form textarea, form select {
     display: block;
     width: 100%; }
@@ -487,53 +494,34 @@ form {
     color: #726d5d;
     font-family: 'Raleway', sans-serif;
     font-size: 16px; }
+    @media (min-width: 1024px) {
+      form textarea {
+        width: 80%; } }
   form textarea.active {
     margin-bottom: 0; }
-  form input[type="submit"] {
-    font-size: 15px;
-    background-color: #eb165e;
-    color: #fff;
-    display: inline-block;
-    width: 100%;
-    padding: 12px 36px;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    -webkit-transition: background-color 0.15s ease;
-    transition: background-color 0.15s ease;
-    border: none;
-    position: relative;
-    z-index: 2;
-    margin-top: 25px; }
-    form input[type="submit"]:hover {
-      background-color: #f45a48; }
-    @media (min-width: 1024px) {
-      form input[type="submit"] {
-        font-size: 16px;
-        display: inline-block;
-        width: 100%;
-        margin-top: 0; } }
   form label {
     color: #726d5d; }
   form input[type=radio] {
     width: auto;
     height: auto;
-    padding: 10px; }
-    form input[type=radio]:checked {
-      border-color: blue; }
-  form .radio--yes {
-    border: 1px solid green; }
-  form .radio--no {
-    border: 1px solid red; }
+    padding: 10px;
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center; }
+  form .radio--yes:checked {
+    background-image: url(checkmark-green.png); }
+  form .radio--no:checked {
+    background-image: url(checkmark-red.png); }
   form .radioLabel {
     line-height: 22px;
     padding-left: 14px; }
   form .checkbox {
-    width: 25px; }
+    width: 22px;
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center; }
     form .checkbox:checked {
-      border-color: blue; }
+      background-image: url(checkmark-green.png); }
   form .selectContainer label {
     margin-bottom: 20px; }
   form .selectContainer select {
@@ -541,6 +529,37 @@ form {
 
 .isHidden {
   display: none; }
+
+.submit_container {
+  max-width: 300px;
+  margin: 30px 0px; }
+
+input[type="submit"] {
+  font-size: 15px;
+  background-color: #eb165e;
+  color: #fff;
+  display: inline-block;
+  width: 100%;
+  padding: 12px 36px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  -webkit-transition: background-color 0.15s ease;
+  transition: background-color 0.15s ease;
+  border: none;
+  position: relative;
+  z-index: 2;
+  margin-top: 25px; }
+  input[type="submit"]:hover {
+    background-color: #f45a48; }
+  @media (min-width: 1024px) {
+    input[type="submit"] {
+      font-size: 16px;
+      display: inline-block;
+      width: 100%;
+      margin-top: 0; } }
 
 .required-message, .error-message {
   color: #c43b1d;
@@ -599,3 +618,9 @@ p.success_message {
   position: relative;
   z-index: 2;
   font-weight: 700; }
+
+.react-add-to-calendar {
+  margin-top: 20px; }
+
+.react-add-to-calendar__dropdown li {
+  margin: 10px 0; }

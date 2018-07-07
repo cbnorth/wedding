@@ -60,11 +60,16 @@ class Invitation extends Component {
 		})
 	}
 
+	_handleFormSubmit = () => {
+		this.setState({
+			formSubmitted: true
+		})
+	}
+
 	render() {
-		//there is a bug here - I don't think the cookie is being set properly
-		// if (!Cookie.get( "auth" )) {
-    //   return <Redirect push to="/" />;
-    // }
+		if (!Cookie.get( "auth" )) {
+      return <Redirect push to="/" />;
+    }
 		let mobileMenuHandler= classNames({
       'MobileMenu__open': this.state.mobileMenuOpen,
 			invitationPage: true
@@ -72,8 +77,8 @@ class Invitation extends Component {
 
 		return (
 			<div className={mobileMenuHandler}>
-				{this.state.mobileRSVP && <RSVPForm className="MobileRSVPForm" handleRSVPExit={this._handleRSVPExit}/>}
 				<MediaQuery query="(max-width: 1023px)">
+					{this.state.mobileRSVP && <RSVPForm className="MobileRSVPForm" handleRSVPExit={this._handleRSVPExit} handleFormSubmit={this._handleFormSubmit} formSubmitted={this.state.formSubmitted}/>}
 					<div className='MobileMenu'>
 						<button className="MobileMenu__Button" onClick={this._handleMenuButtonClick}><span /></button>
 						<Menu items={["schedule", "location", "RSVP", "FAQ", "Registry", "Contact"]} className="MobileMenu__items" onClick={this._handleMenuClick}/>
@@ -92,7 +97,7 @@ class Invitation extends Component {
 					<div className="AboutUs SectionInner">
 						<div className="AboutUs__Copy">
 							<p>In the summer of 2014 Chris and Emma met on Capitol Hill. They had their first date at Le Zinc (later Naka and then Adana). They thought it was kind of horrible and decided to jump out the window and run down the street to start their date over at what is still one of their favorite spots in the city, Artusi. </p>
-							<p>Since that day they've been traveling the same path in life and have a built a strong and unbreakable partnership that has empowered them to travel the world, to buy a home, to lean on each other in goods times and bad and now to get married.</p>
+							<p>Since that day they've been traveling the same path in life and have a built a strong and unbreakable partnership that has empowered them to travel the world, to buy a home (twice), to lean on each other in goods times and bad and now to get married.</p>
 							<p>We invite you, our family and dearest friends, to join us on September 29th, 2018 at the celebration of our partnership.</p>
 						</div>
 						<MediaQuery query="(min-width: 1024px)">
@@ -116,7 +121,7 @@ class Invitation extends Component {
 								<ul>
 									<li>3:30 Drinks & lawn games</li>
 									<li>5:30 Dinner & cake</li>
-									<li>7:00 Dancing & mashmallow roasting</li>
+									<li className="nobreak">7:00 Dancing & mashmallow roasting</li>
 								</ul>
 							</div>
 						</div>
@@ -142,7 +147,7 @@ class Invitation extends Component {
 				<MediaQuery query="(min-width: 1024px)">
 					<section className="SectionDark SectionDark--darker" id="RSVP">
 						<div className="SectionInner">
-							<RSVPForm className="RSVPForm" handleRSVPExit={this._handleRSVPExit}/>
+							<RSVPForm className="RSVPForm" handleRSVPExit={this._handleRSVPExit} handleFormSubmit={this._handleFormSubmit} formSubmitted={this.state.formSubmitted}/>
 						</div>
 					</section>
 				</MediaQuery>
