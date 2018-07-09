@@ -38,7 +38,7 @@ class Login extends Component {
   _setCookie = () => {
     console.log('cookie setting')
     Cookie.set(
-      "auth",
+      "inviteauth",
       "true",
       {
           domain:  "comeandpartywithus.com",
@@ -70,7 +70,7 @@ class Login extends Component {
       'LoginPage__Password--error': this.state.passwordError
     });
 
-    if (this.state.redirect || Cookie.get( "auth" )) {
+    if (this.state.redirect || Cookie.get( "inviteauth" )) {
       return <Redirect push to="/invitation" />;
     }
 

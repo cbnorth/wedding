@@ -20,6 +20,7 @@
     "react-dom": "^16.4.1",
     "react-responsive": "^4.1.0",
     "react-scripts": "1.0.13",
+    "react-slick": "^0.23.1",
     "universal-cookie": "^2.2.0"
   },
   "scripts": {

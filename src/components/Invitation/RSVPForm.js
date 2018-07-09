@@ -120,8 +120,8 @@ class RSVPForm extends Component {
 					>
 					  <div className="FlexContainer">
 					    <div className="left">
-					      <input type="text" name="entry.1069655472" value="" className="ss-q-short required" id="entry_1069655472" dir="auto" aria-label="Name  " aria-required="true" required="" title="" onChange={(e) => this._nameChange(e)} value={this.state.nameValue}/>
-					      <input type="text" name="entry.1595218418" value="" className="ss-q-short valid" id="entry_1595218418" dir="auto" aria-label="Your plus one's name  " title="" onChange={(e) => this._plusOneNameChange(e)} value={this.state.plusOneName}/>
+					      <input type="text" name="entry.1069655472" value="" className="ss-q-short required" id="entry_1069655472" dir="auto" aria-label="Name  " aria-required="true" placeholder="Your name" required="" title="" onChange={(e) => this._nameChange(e)} value={this.state.nameValue}/>
+					      <input type="text" name="entry.1595218418" value="" className="ss-q-short valid" id="entry_1595218418" dir="auto" placeholder="Your guests name" aria-label="Your plus one's name  " title="" onChange={(e) => this._plusOneNameChange(e)} value={this.state.plusOneName}/>
 								<div className="FlexContainer">
 									<div
 										role="radiogroup"
@@ -169,6 +169,7 @@ class RSVPForm extends Component {
 				      type="submit"
 				      name="submit"
 				      defaultValue="Submit RSVP"
+							className="Button"
 							onClick={this._handleFormSubmit}
 				    />
 				  </div>
